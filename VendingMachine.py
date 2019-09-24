@@ -33,9 +33,9 @@ varPrice4 = 5.75
 #*********************** Item #1 ***********************
 
 if varItem == 1:
-	money = float(input("Selected: Milk. Please insert $2.25. \n"))
+	varMoney = float(input("Selected: Milk. Please insert $2.25. \n"))
 
-	if money == 2.25:
+	if varMoney == 2.25:
 		print("Here Is Your Milk.")
 		print(" ")
 		print("Hope It's Not Expired! ♪~ ᕕ(ᐛ)ᕗ")
@@ -43,11 +43,11 @@ if varItem == 1:
 	elif money < 2.25:
 		print("Insufficient Funds.")
 		print(" ")
-		print("Your Purchase Has Been Canceled And You Have Lost $"+str(money)+". ༼ つ ಥ_ಥ ༽つ")
+		print("Your Purchase Has Been Canceled And You Have Lost $"+str(varMoney)+". ༼ つ ಥ_ಥ ༽つ")
 
-	elif money > 2.25:
+	elif varMoney > 2.25:
 
-		varLost = money - 2.25
+		varLost = varMoney - 2.25
 
 		print("You have lost $"+str(varLost)+" since the milk only costed $"+str(varPrice1)+".")
 		print(" ")
@@ -56,21 +56,21 @@ if varItem == 1:
 #*********************** Item #2 ***********************
 
 elif varItem == 2:
-	money = float(input("Selected: Apple. Please insert $1.25. \n"))
+	varMoney = float(input("Selected: Apple. Please insert $1.25. \n"))
 
-	if money == 1.25:
+	if varMoney == 1.25:
 		print("Here Is Your Apple.")
 		print(" ")
 		print("Hope It's Not Rotten! ༼ つ ◕_◕ ༽つ")
 
-	elif money < 1.25:
+	elif varMoney < 1.25:
 		print("Insufficient Funds.")
 		print(" ")
-		print("Your Purchase Has Been Canceled And You Have Lost $"+str(money)+". ╚(ಠ_ಠ)=┐")
+		print("Your Purchase Has Been Canceled And You Have Lost $"+str(varMoney)+". ╚(ಠ_ಠ)=┐")
 
-	elif money > 1.25:
+	elif varMoney > 1.25:
 
-		varLost = money - 1.25
+		varLost = varMoney - 1.25
 
 		print("You have lost $"+str(varLost)+" since the apple only costed $"+str(varPrice2)+".")
 		print(" ")
@@ -79,21 +79,21 @@ elif varItem == 2:
 #*********************** Item #3 ***********************
 
 elif varItem == 3:
-	money = float(input("Selected: Bottled Water. Please insert $1.55. \n"))
+	varMoney = float(input("Selected: Bottled Water. Please insert $1.55. \n"))
 
-	if money == 1.55:
+	if varMoney == 1.55:
 		print("Here Is Your Bottled Water.")
 		print(" ")
 		print("Hope It's Not Contaminated! ¯\_(ツ)_/¯") 
 
-	elif money < 1.55:
+	elif varMoney < 1.55:
 		print("Insufficient Funds.")
 		print(" ")
-		print("Your Purchase Has Been Canceled And You Have Lost $"+str(money)+". ( ͡° ͜ʖ ͡°)")
+		print("Your Purchase Has Been Canceled And You Have Lost $"+str(varMoney)+". ( ͡° ͜ʖ ͡°)")
 
-	elif money > 1.55:
+	elif varMoney > 1.55:
 
-		varLost = money - 1.55
+		varLost = varMoney - 1.55
 
 		print("You have lost $"+str(varLost)+" since the bottled water only costed $"+str(varPrice3)+".")
 		print(" ")
@@ -102,21 +102,21 @@ elif varItem == 3:
 #*********************** Item #4 ***********************
 
 elif varItem == 4:
-	money = float(input("Selected: Chicken Wings. Please insert $5.75. \n"))
+	varMoney = float(input("Selected: Chicken Wings. Please insert $5.75. \n"))
 
-	if money == 5.75:
+	if varMoney == 5.75:
 		print("Here Are Your Chicken Wings.")
 		print(" ")
 		print("Hope It's Fully Cooked! (づ￣ ³￣)づ")
 
-	elif money < 5.75:
+	elif varMoney < 5.75:
 		print("Insufficient Funds.")
 		print(" ")
-		print("Your Purchase Has Been Canceled And You Have Lost $"+str(money)+". ʕ•ᴥ•ʔ")
+		print("Your Purchase Has Been Canceled And You Have Lost $"+str(varMoney)+". ʕ•ᴥ•ʔ")
 
-	elif money > 5.75:
+	elif varMoney > 5.75:
 
-		varLost = money - 5.75
+		varLost = varMoney - 5.75
 
 		print("You have lost $"+str(varLost)+" since the chicken wings only costed $"+str(varPrice4)+".")
 		print(" ")
