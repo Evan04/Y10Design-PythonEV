@@ -40,7 +40,7 @@ if varItem == 1:
 		print(" ")
 		print("Hope It's Not Expired! ♪~ ᕕ(ᐛ)ᕗ")
 
-	elif money < 2.25:
+	elif varMoney < 2.25:
 		print("Insufficient Funds.")
 		print(" ")
 		print("Your Purchase Has Been Canceled And You Have Lost $"+str(varMoney)+". ༼ つ ಥ_ಥ ༽つ")
