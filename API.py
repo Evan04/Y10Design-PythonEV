@@ -2,10 +2,22 @@ import requests
 import json
 import pprint
 
-def writeHTML(data):
-    myfile = open("articleAPI.html","w")
+def generalInfo():
 
-    myfile.close()
+    global request, jsonData
+
+    response = requests.get("https://geo-info.co/43.65,-79.40")
+
+    if (response.status_code == 200):
+        request = requests.get("https://gnews.io/api/v3/top-news?token=e5509443651c0842b01c9142e25ef5f0")
+
+        jsonData = request.json()
+
+        numArticles = jsonData['articleCount']
+        print(str(numArticles)+" articles were counted.")
+
+    else:
+        print("An error has occured.")
 
 def main():
 
@@ -26,29 +38,160 @@ def main():
 
     articleInput = int(input("Choose an article you would like more information about? \n"))
 
-    articleDescription1 = 0
+    articleOption = 0
 
-    articleDescription2 = 0
-
-    articleDescription3 = 0
-
-    articleDescription4 = 0
-
-    articleDescription5 = 0
-
-
-
-    #********************** Articles ***********************
+    #********************* Articles 1 **********************
 
     if articleInput == 1:
-        articleDescription1 = int(input("1. Description \n"))
-        articleAuthor1 = int(input("2. Author \n"))
-        articlePublishedDate1 = int(input("3. Published Date \n"))
-        articleURL1 = int(input("4. URL \n"))
+        print(" ")
+        print("Selected: Justice Department distances itself from Giuliani")
+        print(" ")
+        print("1. Description")
+        print(" ")
+        print("2. URL")
+        print(" ")
+        print("3. Published Date")
+        print(" ")
+        print("4. Author")
+        print(" ")
+        print("Please Make Your Selection")
 
-        if articleDescription1 == 1:
-            print("description")
+        articleOption = float(input("  \n"))
+
+        if articleOption == 1:
+            print("descripton here")
+
+        elif articleOption == 2:
+            print("url here")
+
+        elif articleOption == 3:
+            print("published date here")
+
+        elif articleOption == 4:
+            print("author here")
+
+#********************* Articles 2 **********************
+
+    if articleInput == 2:
+        print(" ")
+        print("Selected: Mitt Romney Admits Using Secret 'Pierre Delecto' Twitter Account to Defend Himself")
+        print(" ")
+        print("1. Description")
+        print(" ")
+        print("2. URL")
+        print(" ")
+        print("3. Published Date")
+        print(" ")
+        print("4. Author")
+        print(" ")
+        print("Please Make Your Selection")
+
+        articleOption = float(input("  \n"))
+
+        if articleOption == 1:
+            print("descripton here")
+
+        elif articleOption == 2:
+            print("url here")
+
+        elif articleOption == 3:
+            print("published date here")
+
+        elif articleOption == 4:
+            print("author here")
+
+#********************* Articles 3 **********************
+
+    if articleInput == 3:
+        print(" ")
+        print("Selected: 'A life-threatening situation’: Dallas tornado devastates homes, leaves thousands without power")
+        print(" ")
+        print("1. Description")
+        print(" ")
+        print("2. URL")
+        print(" ")
+        print("3. Published Date")
+        print(" ")
+        print("4. Author")
+        print(" ")
+        print("Please Make Your Selection")
+
+        articleOption = float(input("  \n"))
+
+        if articleOption == 1:
+            print("descripton here")
+
+        elif articleOption == 2:
+            print("url here")
+
+        elif articleOption == 3:
+            print("published date here")
+
+        elif articleOption == 4:
+            print("author here")
+
+#********************* Articles 4 **********************
+
+    if articleInput == 4:
+        print(" ")
+        print("Selected: Trump’s Base Digs In Its Heels, Even as Support for Impeachment Grows")
+        print(" ")
+        print("1. Description")
+        print(" ")
+        print("2. URL")
+        print(" ")
+        print("3. Published Date")
+        print(" ")
+        print("4. Author")
+        print(" ")
+        print("Please Make Your Selection")
+
+        articleOption = float(input("  \n"))
+
+        if articleOption == 1:
+            print("descripton here")
+
+        elif articleOption == 2:
+            print("url here")
+
+        elif articleOption == 3:
+            print("published date here")
+
+        elif articleOption == 4:
+            print("author here")
+
+#********************* Articles 5 **********************
+
+    if articleInput == 5:
+        print(" ")
+        print("Selected: '$50bn is pocket change': opioid makers on trial in Ohio after talks collapse")
+        print(" ")
+        print("1. Description")
+        print(" ")
+        print("2. URL")
+        print(" ")
+        print("3. Published Date")
+        print(" ")
+        print("4. Author")
+        print(" ")
+        print("Please Make Your Selection")
+
+        articleOption = float(input("  \n"))
+
+        if articleOption == 1:
+            print("descripton here")
+
+        elif articleOption == 2:
+            print("url here")
+
+        elif articleOption == 3:
+            print("published date here")
+
+        elif articleOption == 4:
+            print("author here")
+
+
         
 
 
-main()
+generalInfo()
