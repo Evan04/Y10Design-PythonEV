@@ -131,7 +131,7 @@ varPlayer = input("List of Arsenal F.C. Players \nPlease Select A Player \n 1. H
 #Displays the selected player when the user enters "1"
 if varPlayer == "1":
     print(" ")
-    print ("Selected Player Is: Hector Bellerin")
+    print ("Selected Player: Hector Bellerin")
 
     #Pulls specific data from the API (ie. player name, player position, etc)
     varData = request.json()
@@ -173,7 +173,7 @@ if varPlayer == "1":
 
 elif varPlayer == "2":
     print(" ")
-    print ("Selected Player Is: Mesut Ozil")
+    print ("Selected Player: Mesut Ozil")
 
     varData = request.json()
     varPlayer2 = varData ['player'] [1] ['strPlayer']
@@ -206,7 +206,7 @@ elif varPlayer == "2":
 
 if varPlayer == "3":
     print(" ")
-    print ("Selected Player Is: Emiliano Martinez")
+    print ("Selected Player: Emiliano Martinez")
 
     varData = request.json()
     varPlayer3 = varData ['player'] [2] ['strPlayer']
@@ -239,7 +239,7 @@ if varPlayer == "3":
 
 if varPlayer == "4":
     print(" ")
-    print ("Selected Player Is: Calum Chambers")
+    print ("Selected Player: Calum Chambers")
 
     varData = request.json()
     varPlayer4 = varData ['player'] [3] ['strPlayer']
@@ -272,7 +272,7 @@ if varPlayer == "4":
 
 if varPlayer == "5":
     print(" ")
-    print ("Selected Player Is: Matt Macey")
+    print ("Selected Player: Matt Macey")
 
     varData = request.json()
     varPlayer5 = varData ['player'] [4] ['strPlayer']
@@ -305,7 +305,7 @@ if varPlayer == "5":
 
 if varPlayer == "6":
     print(" ")
-    print ("Selected Player Is: Ainsley Maitland-Niles")
+    print ("Selected Player: Ainsley Maitland-Niles")
 
     varData = request.json()
     varPlayer6 = varData ['player'] [5] ['strPlayer']
@@ -338,7 +338,7 @@ if varPlayer == "6":
 
 if varPlayer == "7":
     print(" ")
-    print ("Selected Player Is: Kieran Tierney")
+    print ("Selected Player: Kieran Tierney")
 
     varData = request.json()
     varPlayer7 = varData ['player'] [6] ['strPlayer']
@@ -371,7 +371,7 @@ if varPlayer == "7":
 
 if varPlayer == "8":
     print(" ")
-    print ("Selected Player Is: Alexandre Lacazette")
+    print ("Selected Player: Alexandre Lacazette")
 
     varData = request.json()
     varPlayer8 = varData ['player'] [7] ['strPlayer']
@@ -404,7 +404,7 @@ if varPlayer == "8":
 
 if varPlayer == "9":
     print(" ")
-    print ("Selected Player Is: Hector Bellerin")
+    print ("Selected Player: Hector Bellerin")
 
     varData = request.json()
     varPlayer9 = varData ['player'] [8] ['strPlayer']
@@ -437,7 +437,7 @@ if varPlayer == "9":
 
 if varPlayer == "10":
     print(" ")
-    print ("Selected Player Is: David Luiz")
+    print ("Selected Player: David Luiz")
 
     varData = request.json()
     varPlayer10 = varData ['player'] [9] ['strPlayer']
@@ -470,7 +470,7 @@ if varPlayer == "10":
 
 if varPlayer == "11":
     print(" ")
-    print ("Selected Player Is: Sokratis Papastathopoulos")
+    print ("Selected Player: Sokratis Papastathopoulos")
 
     varData = request.json()
     varPlayer11 = varData ['player'] [10] ['strPlayer']
@@ -503,7 +503,7 @@ if varPlayer == "11":
 
 if varPlayer == "12":
     print(" ")
-    print ("Selected Player Is: Pierre-Emerick Aubameyang")
+    print ("Selected Player: Pierre-Emerick Aubameyang")
 
     varData = request.json()
     varPlayer12 = varData ['player'] [11] ['strPlayer']
@@ -536,7 +536,7 @@ if varPlayer == "12":
 
 if varPlayer == "13":
     print(" ")
-    print ("Selected Player Is: Bernd Leno")
+    print ("Selected Player: Bernd Leno")
 
     varData = request.json()
     varPlayer13 = varData ['player'] [12] ['strPlayer']
@@ -569,7 +569,7 @@ if varPlayer == "13":
 
 if varPlayer == "14":
     print(" ")
-    print ("Selected Player Is: Daniel Ceballos")
+    print ("Selected Player: Daniel Ceballos")
 
     varData = request.json()
     varPlayer14 = varData ['player'] [13] ['strPlayer']
@@ -602,7 +602,7 @@ if varPlayer == "14":
 
 if varPlayer == "15":
     print(" ")
-    print ("Selected Player Is: Granit Xhaka")
+    print ("Selected Player: Granit Xhaka")
 
     varData = request.json()
     varPlayer15 = varData ['player'] [14] ['strPlayer']
@@ -635,7 +635,7 @@ if varPlayer == "15":
 
 if varPlayer == "16":
     print(" ")
-    print ("Selected Player Is: Rob Holding")
+    print ("Selected Player: Rob Holding")
 
     varData = request.json()
     varPlayer16 = varData ['player'] [15] ['strPlayer']
@@ -668,7 +668,7 @@ if varPlayer == "16":
 
 if varPlayer == "17":
     print(" ")
-    print ("Selected Player Is: Sead Kolasinac")
+    print ("Selected Player: Sead Kolasinac")
 
     varData = request.json()
     varPlayer17 = varData ['player'] [16] ['strPlayer']
@@ -701,7 +701,7 @@ if varPlayer == "17":
 
 if varPlayer == "18":
     print(" ")
-    print ("Selected Player Is: Konstantinos Mavropanos")
+    print ("Selected Player: Konstantinos Mavropanos")
 
     varData = request.json()
     varPlayer18 = varData ['player'] [17] ['strPlayer']
@@ -734,7 +734,7 @@ if varPlayer == "18":
 
 if varPlayer == "19":
     print(" ")
-    print ("Selected Player Is: Matteo Guendouzi")
+    print ("Selected Player: Matteo Guendouzi")
 
     varData = request.json()
     varPlayer19 = varData ['player'] [18] ['strPlayer']
@@ -767,7 +767,7 @@ if varPlayer == "19":
 
 if varPlayer == "20":
     print(" ")
-    print ("Selected Player Is: Lucas Torreira")
+    print ("Selected Player: Lucas Torreira")
 
     varData = request.json()
     varPlayer20 = varData ['player'] [19] ['strPlayer']
@@ -800,7 +800,7 @@ if varPlayer == "20":
 
 if varPlayer == "21":
     print(" ")
-    print ("Selected Player Is: Unai Emery")
+    print ("Selected Player: Unai Emery")
 
     varData = request.json()
     varPlayer21 = varData ['player'] [20] ['strPlayer']
@@ -833,7 +833,7 @@ if varPlayer == "21":
 
 if varPlayer == "22":
     print(" ")
-    print ("Selected Player Is: Nicolas Pepe")
+    print ("Selected Player: Nicolas Pepe")
 
     varData = request.json()
     varPlayer22 = varData ['player'] [21] ['strPlayer']
@@ -866,7 +866,7 @@ if varPlayer == "22":
 
 if varPlayer == "23":
     print(" ")
-    print ("Selected Player Is: Jherson Vergara")
+    print ("Selected Player: Jherson Vergara")
 
     varData = request.json()
     varPlayer23 = varData ['player'] [22] ['strPlayer']
@@ -899,7 +899,7 @@ if varPlayer == "23":
 
 if varPlayer == "24":
     print(" ")
-    print ("Selected Player Is: Victor Alvarez")
+    print ("Selected Player: Victor Alvarez")
 
     varData = request.json()
     varPlayer24 = varData ['player'] [23] ['strPlayer']
@@ -932,7 +932,7 @@ if varPlayer == "24":
 
 if varPlayer == "25":
     print(" ")
-    print ("Selected Player Is: Maksim Belyayev")
+    print ("Selected Player: Maksim Belyayev")
 
     varData = request.json()
     varPlayer25 = varData ['player'] [24] ['strPlayer']
