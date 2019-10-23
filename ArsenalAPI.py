@@ -5,10 +5,115 @@
 
 import json
 import requests
-import pprint
+import webbrowser
+
+#–––––––––––––––––––––––––––––––– Helper Functions –––––––––––––––––––––––––––––––
+
+#The datas below act as "place holders"
+def writeHTML(data1, data2, data3, data4, data5):
+    myfile = open("playerAPI.html","w")
+
+    #The file's location is different for every user
+    filename1 = 'file:///Users/evan.van/Desktop//Git Repo/Y10Design-PythonEV/playerAPI.html'
+
+    #Opens the HTML file in a new tab
+    webbrowser.open_new_tab(filename1)
+    
+#–––––––––––––––––––––––––––––––––––– HTML/CSS –––––––––––––––––––––––––––––––––––
+   
+    #The HTML code for the webpage
+    myfile.write("""
+<!DOCTYPE html>
+<html>
+
+    <title>Arsenal F.C. Player Info</title>
+    <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+    body, html {
+      height: 100%;
+      margin: 0;
+      font: 400 15px/1.8 "Lato", sans-serif;
+      color: #db3535;
+    }
+
+    .image1, .image2 {
+      position: relative;
+      opacity: 0.65;
+      background-attachment: fixed;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-size: cover;
+
+    }
+    .image1 {
+      background-image: url("https://images7.alphacoders.com/970/970081.jpg");
+      min-height: 100%;
+    }
+
+    .image2 {
+      background-image: url("https://premierleague-static-files.s3.amazonaws.com/premierleague/photo/2017/11/30/7e5cfb87-c1b8-49c3-9a5a-c8fb84d94ab8/882108058.jpg");
+      min-height: 750px;
+    }
+
+    .caption {
+      position: absolute;
+      left: 0;
+      top: 50%;
+      width: 100%;
+      text-align: center;
+      color: #000;
+    }
+
+    .caption span.border {
+      background-color: #111;
+      color: #fff;
+      padding: 18px;
+      font-size: 25px;
+      letter-spacing: 10px;
+    }
+
+    h1 {
+      letter-spacing: 5px;
+      text-transform: uppercase;
+      font: 20px "Lato", sans-serif;
+      color: #111;
+    }
+
+    }
+    </style>
+    </head>
+    <body>
+
+    <div class="image1">
+      <div class="caption">
+      <span class="border">"""+ data1+"""</span>
+      </div>
+    </div>
+
+    <div style="color: #777;background-color:white;text-align:center;padding:75px 200px;text-align: justify;">
+      <h1 style="text-align:center;">Player Information</h1>
+      <p>Date of Birth: """+ data2+"""</p>
+      <p>Position: """+ data3+"""</p>
+      <p>Nationality: """+ data4+"""</p>
+      <p>Description: """+ data5+"""</p>
+
+    </div>
+
+    <div class="image2">
+      <div class="caption">
+      <span class="border">Go to <a href='https://www.thesportsdb.com/api.php'>The Sports DB</a> for API Info.</span>
+      </div>
+    </div>
+
+
+    </body></html>""")
+
+    myfile.close()
 
 #––––––––––––––––––––––––––––––––––––––– Request –––––––––––––––––––––––––––––––––––––––
 
+#Contains the data retrieved by "requests" from the api site
 request = requests.get("https://www.thesportsdb.com/api/v1/json/1/searchplayers.php?t=Arsenal")
 
 request_text = request.text
@@ -17,683 +122,841 @@ data = json.loads(request_text)
 
 #––––––––––––––––––––––––––––––––––– List of Players –––––––––––––––––––––––––––––––––––
 
+#Displays the players on the Arsenal F.C. Team
 varPlayer = input("List of Arsenal F.C. Players \nPlease Select A Player \n 1. Hector Bellerin \n 2. Mesut Ozil \n 3. Emiliano Martinez \n 4. Calum Chambers \n 5. Matt Macey \n 6. Ainsley Maitland-Niles \n 7. Kieran Tierney \n 8. Alexandre Lacazette \n 9. Shkodran Mustafi \n 10. David Luiz \n 11. Sokratis Papastathopoulos \n 12. Pierre-Emerick Aubameyang \n 13. Bernd Leno \n 14. Daniel Ceballos \n 15. Granit Xhaka \n 16. Rob Holding \n 17. Sead Kolasinac \n 18. Konstantinos Mavropanos \n 19. Matteo Guendouzi \n 20. Lucas Torreira \n 21. Unai Emery \n 22. Nicolas Pepe \n 23. Jherson Vergara \n 24. Victor Alvarez \n 25. Maksim Belyayev \n")
 
 #––––––––––––––––––––––––––––––––––– Hector Bellerin –––––––––––––––––––––––––––––––––––
 
+#The following code below is repeated 25 times for each player
+#Displays the selected player when the user enters "1"
 if varPlayer == "1":
     print(" ")
-    varOptions = input("Selected: Hector Bellerin \nChoose An Option About This Player \n 1. Date of Birth \n 2. Location of Birth \n 3. Position \n 4. Description \n")
+    print ("Selected Player Is: Hector Bellerin")
 
-    if varOptions == "1":
-        varData = request.json()
-        varChoice = varData ['player'][0]['dateBorn']
-        print ("Date of Birth: " + varChoice)
-    elif varOptions == "2":
-        varData = request.json()
-        varChoice = varData ['player'][0]['strNationality']
-        print ("Location of Birth: " + varChoice)
-    elif varOptions == "3":
-        varData = request.json()
-        varChoice = varData ['player'][0]['strPosition']
-        print ("Position: " + varChoice)
-    elif varOptions == "4":
-        varData = request.json()
-        varChoice = varData ['player'][0]['strDescriptionEN']
-        print ("Description: " + varChoice)
+    #Pulls specific data from the API (ie. player name, player position, etc)
+    varData = request.json()
+    varPlayer1 = varData ['player'] [0] ['strPlayer']
+    varBorn1 = varData ['player'][0]['dateBorn']
+    varPosition1 = varData ['player'][0]['strPosition']
+    varNationality1 = varData ['player'][0]['strNationality']
+    varDescription1 = varData ['player'][0]['strDescriptionEN']
 
+    #Allows the user to either enter "y" for yes and "n" for no    
+    openWeb = input("Would you like to open this information in a webpage? Y/N \n")
+
+    #The user can either enter a capital or lowercase "y"
+    if openWeb == "Y" or "y":
+        
+        #These variables are used in the HTML section above
+        writeHTML(varPlayer1, varBorn1, varPosition1, varNationality1, varDescription1)
+
+    #The user can either enter a capital or lowercase "n"
+    elif openWeb == "N" or "n":
+
+        print(" ")
+        print("Thank you for using this program")
+        print(" ")
+
+        #A graceful way to exit the program
+        input("Press ENTER to quit the program")
+
+    #If the user types anything else besides a "Y", "y", "N" or "n", then the program would display that the character is invalid
     else:
-        print("Invalid Number")
-        print("Have A Nice Day!")
+
+        print(" ")
+        print("Invalid character given")
+        print(" ")
+        input("Press ENTER to quit the program")
+
 
 #––––––––––––––––––––––––––––––––––––– Mesut Ozil –––––––––––––––––––––––––––––––––––––
 
-if varPlayer == "2":
+elif varPlayer == "2":
     print(" ")
-    varOptions = input("Selected: Mesut Ozil \nChoose An Option About This Player \n 1. Date of Birth \n 2. Location of Birth \n 3. Position \n 4. Description \n")
+    print ("Selected Player Is: Mesut Ozil")
 
-    if varOptions == "1":
-        varData = request.json()
-        varChoice = varData ['player'][1]['dateBorn']
-        print ("Date of Birth: " + varChoice)
-    elif varOptions == "2":
-        varData = request.json()
-        varChoice = varData ['player'][1]['strNationality']
-        print ("Location of Birth: " + varChoice)
-    elif varOptions == "3":
-        varData = request.json()
-        varChoice = varData ['player'][1]['strPosition']
-        print ("Position: " + varChoice)
-    elif varOptions == "4":
-        varData = request.json()
-        varChoice = varData ['player'][1]['strDescriptionEN']
-        print ("Description: " + varChoice)
+    varData = request.json()
+    varPlayer2 = varData ['player'] [1] ['strPlayer']
+    varBorn2 = varData ['player'][1]['dateBorn']
+    varPosition2 = varData ['player'][1]['strPosition']
+    varNationality2 = varData ['player'][1]['strNationality']
+    varDescription2 = varData ['player'][1]['strDescriptionEN']
+        
+    openWeb = input("Would you like to open this information in a webpage? Y/N \n")
+
+    if openWeb == "Y" or "y":
+            
+        writeHTML(varPlayer2, varBorn2, varPosition2, varNationality2, varDescription2)
+
+    elif openWeb == "N" or "n":
+
+        print(" ")
+        print("Thank you for using this program")
+        print(" ")
+        input("Press ENTER to quit the program")
 
     else:
-        print("Invalid Number")
-        print("Have A Nice Day!")
+
+        print(" ")
+        print("Invalid character given")
+        print(" ")
+        input("Press ENTER to quit the program")
 
 #––––––––––––––––––––––––––––––––– Emiliano Martinez –––––––––––––––––––––––––––––––––
 
 if varPlayer == "3":
     print(" ")
-    varOptions = input("Selected: Emiliano Martinez \nChoose An Option About This Player \n 1. Date of Birth \n 2. Location of Birth \n 3. Position \n 4. Description \n")
+    print ("Selected Player Is: Emiliano Martinez")
 
-    if varOptions == "1":
-        varData = request.json()
-        varChoice = varData ['player'][2]['dateBorn']
-        print ("Date of Birth: " + varChoice)
-    elif varOptions == "2":
-        varData = request.json()
-        varChoice = varData ['player'][2]['strNationality']
-        print ("Location of Birth: " + varChoice)
-    elif varOptions == "3":
-        varData = request.json()
-        varChoice = varData ['player'][2]['strPosition']
-        print ("Position: " + varChoice)
-    elif varOptions == "4":
-        varData = request.json()
-        varChoice = varData ['player'][2]['strDescriptionEN']
-        print ("Description: " + varChoice)
+    varData = request.json()
+    varPlayer3 = varData ['player'] [2] ['strPlayer']
+    varBorn3 = varData ['player'][2]['dateBorn']
+    varPosition3 = varData ['player'][2]['strPosition']
+    varNationality3 = varData ['player'][2]['strNationality']
+    varDescription3 = varData ['player'][2]['strDescriptionEN']
+        
+    openWeb = input("Would you like to open this information in a webpage? Y/N \n")
+
+    if openWeb == "Y" or "y":
+            
+        writeHTML(varPlayer3, varBorn3, varPosition3, varNationality3, varDescription3)
+
+    elif openWeb == "N" or "n":
+
+        print(" ")
+        print("Thank you for using this program")
+        print(" ")
+        input("Press ENTER to quit the program")
 
     else:
-        print("Invalid Number")
-        print("Have A Nice Day!")
+
+        print(" ")
+        print("Invalid character given")
+        print(" ")
+        input("Press ENTER to quit the program")
 
 #–––––––––––––––––––––––––––––––––– Calum Chambers ––––––––––––––––––––––––––––––––––
 
 if varPlayer == "4":
     print(" ")
-    varOptions = input("Selected: Calum Chambers \nChoose An Option About This Player \n 1. Date of Birth \n 2. Location of Birth \n 3. Position \n 4. Description \n")
+    print ("Selected Player Is: Calum Chambers")
 
-    if varOptions == "1":
-        varData = request.json()
-        varChoice = varData ['player'][3]['dateBorn']
-        print ("Date of Birth: " + varChoice)
-    elif varOptions == "2":
-        varData = request.json()
-        varChoice = varData ['player'][3]['strNationality']
-        print ("Location of Birth: " + varChoice)
-    elif varOptions == "3":
-        varData = request.json()
-        varChoice = varData ['player'][3]['strPosition']
-        print ("Position: " + varChoice)
-    elif varOptions == "4":
-        varData = request.json()
-        varChoice = varData ['player'][3]['strDescriptionEN']
-        print ("Description: " + varChoice)
+    varData = request.json()
+    varPlayer4 = varData ['player'] [3] ['strPlayer']
+    varBorn4 = varData ['player'][3]['dateBorn']
+    varPosition4 = varData ['player'][3]['strPosition']
+    varNationality4 = varData ['player'][3]['strNationality']
+    varDescription4 = varData ['player'][3]['strDescriptionEN']
+        
+    openWeb = input("Would you like to open this information in a webpage? Y/N \n")
+
+    if openWeb == "Y" or "y":
+            
+        writeHTML(varPlayer3, varBorn3, varPosition3, varNationality3, varDescription3)
+
+    elif openWeb == "N" or "n":
+
+        print(" ")
+        print("Thank you for using this program")
+        print(" ")
+        input("Press ENTER to quit the program")
 
     else:
-        print("Invalid Number")
-        print("Have A Nice Day!")
+
+        print(" ")
+        print("Invalid character given")
+        print(" ")
+        input("Press ENTER to quit the program")
 
 #––––––––––––––––––––––––––––––––––– Matt Macey –––––––––––––––––––––––––––––––––––
 
 if varPlayer == "5":
     print(" ")
-    varOptions = input("Selected: Matt Macey \nChoose An Option About This Player \n 1. Date of Birth \n 2. Location of Birth \n 3. Position \n 4. Description \n")
+    print ("Selected Player Is: Matt Macey")
 
-    if varOptions == "1":
-        varData = request.json()
-        varChoice = varData ['player'][4]['dateBorn']
-        print ("Date of Birth: " + varChoice)
-    elif varOptions == "2":
-        varData = request.json()
-        varChoice = varData ['player'][4]['strNationality']
-        print ("Location of Birth: " + varChoice)
-    elif varOptions == "3":
-        varData = request.json()
-        varChoice = varData ['player'][4]['strPosition']
-        print ("Position: " + varChoice)
-    elif varOptions == "4":
-        varData = request.json()
-        varChoice = varData ['player'][4]['strDescriptionEN']
-        print ("Description: " + varChoice)
+    varData = request.json()
+    varPlayer5 = varData ['player'] [4] ['strPlayer']
+    varBorn5 = varData ['player'][4]['dateBorn']
+    varPosition5 = varData ['player'][4]['strPosition']
+    varNationality5 = varData ['player'][4]['strNationality']
+    varDescription5 = varData ['player'][4]['strDescriptionEN']
+        
+    openWeb = input("Would you like to open this information in a webpage? Y/N \n")
+
+    if openWeb == "Y" or "y":
+            
+        writeHTML(varPlayer5, varBorn5, varPosition5, varNationality5, varDescription5)
+
+    elif openWeb == "N" or "n":
+
+        print(" ")
+        print("Thank you for using this program")
+        print(" ")
+        input("Press ENTER to quit the program")
 
     else:
-        print("Invalid Number")
-        print("Have A Nice Day!")
+
+        print(" ")
+        print("Invalid character given")
+        print(" ")
+        input("Press ENTER to quit the program")
 
 #––––––––––––––––––––––––––––– Ainsley Maitland-Niles –––––––––––––––––––––––––––––
 
 if varPlayer == "6":
     print(" ")
-    varOptions = input("Selected: Ainsley Maitland-Niles \nChoose An Option About This Player \n 1. Date of Birth \n 2. Location of Birth \n 3. Position \n 4. Description \n")
+    print ("Selected Player Is: Ainsley Maitland-Niles")
 
-    if varOptions == "1":
-        varData = request.json()
-        varChoice = varData ['player'][5]['dateBorn']
-        print ("Date of Birth: " + varChoice)
-    elif varOptions == "2":
-        varData = request.json()
-        varChoice = varData ['player'][5]['strNationality']
-        print ("Location of Birth: " + varChoice)
-    elif varOptions == "3":
-        varData = request.json()
-        varChoice = varData ['player'][5]['strPosition']
-        print ("Position: " + varChoice)
-    elif varOptions == "4":
-        varData = request.json()
-        varChoice = varData ['player'][5]['strDescriptionEN']
-        print ("Description: " + varChoice)
+    varData = request.json()
+    varPlayer6 = varData ['player'] [5] ['strPlayer']
+    varBorn6 = varData ['player'][5]['dateBorn']
+    varPosition6 = varData ['player'][5]['strPosition']
+    varNationality6 = varData ['player'][5]['strNationality']
+    varDescription6 = varData ['player'][5]['strDescriptionEN']
+        
+    openWeb = input("Would you like to open this information in a webpage? Y/N \n")
+
+    if openWeb == "Y" or "y":
+            
+        writeHTML(varPlayer6, varBorn6, varPosition6, varNationality6, varDescription6)
+
+    elif openWeb == "N" or "n":
+
+        print(" ")
+        print("Thank you for using this program")
+        print(" ")
+        input("Press ENTER to quit the program")
 
     else:
-        print("Invalid Number")
-        print("Have A Nice Day!")
+
+        print(" ")
+        print("Invalid character given")
+        print(" ")
+        input("Press ENTER to quit the program")
 
 #––––––––––––––––––––––––––––––––– Kieran Tierney ––––––––––––––––––––––––––––––––
 
 if varPlayer == "7":
     print(" ")
-    varOptions = input("Selected: Kieran Tierney \nChoose An Option About This Player \n 1. Date of Birth \n 2. Location of Birth \n 3. Position \n 4. Description \n")
+    print ("Selected Player Is: Kieran Tierney")
 
-    if varOptions == "1":
-        varData = request.json()
-        varChoice = varData ['player'][6]['dateBorn']
-        print ("Date of Birth: " + varChoice)
-    elif varOptions == "2":
-        varData = request.json()
-        varChoice = varData ['player'][6]['strNationality']
-        print ("Location of Birth: " + varChoice)
-    elif varOptions == "3":
-        varData = request.json()
-        varChoice = varData ['player'][6]['strPosition']
-        print ("Position: " + varChoice)
-    elif varOptions == "4":
-        varData = request.json()
-        varChoice = varData ['player'][6]['strDescriptionEN']
-        print ("Description: " + varChoice)
+    varData = request.json()
+    varPlayer7 = varData ['player'] [6] ['strPlayer']
+    varBorn7 = varData ['player'][6]['dateBorn']
+    varPosition7 = varData ['player'][6]['strPosition']
+    varNationality7 = varData ['player'][6]['strNationality']
+    varDescription7 = varData ['player'][6]['strDescriptionEN']
+        
+    openWeb = input("Would you like to open this information in a webpage? Y/N \n")
+
+    if openWeb == "Y" or "y":
+            
+        writeHTML(varPlayer7, varBorn7, varPosition7, varNationality7, varDescription7)
+
+    elif openWeb == "N" or "n":
+
+        print(" ")
+        print("Thank you for using this program")
+        print(" ")
+        input("Press ENTER to quit the program")
 
     else:
-        print("Invalid Number")
-        print("Have A Nice Day!")
+
+        print(" ")
+        print("Invalid character given")
+        print(" ")
+        input("Press ENTER to quit the program")
 
 #–––––––––––––––––––––––––––––– Alexandre Lacazette ––––––––––––––––––––––––––––––
 
 if varPlayer == "8":
     print(" ")
-    varOptions = input("Selected: Alexandre Lacazette \nChoose An Option About This Player \n 1. Date of Birth \n 2. Location of Birth \n 3. Position \n 4. Description \n")
+    print ("Selected Player Is: Alexandre Lacazette")
 
-    if varOptions == "1":
-        varData = request.json()
-        varChoice = varData ['player'][7]['dateBorn']
-        print ("Date of Birth: " + varChoice)
-    elif varOptions == "2":
-        varData = request.json()
-        varChoice = varData ['player'][7]['strNationality']
-        print ("Location of Birth: " + varChoice)
-    elif varOptions == "3":
-        varData = request.json()
-        varChoice = varData ['player'][7]['strPosition']
-        print ("Position: " + varChoice)
-    elif varOptions == "4":
-        varData = request.json()
-        varChoice = varData ['player'][7]['strDescriptionEN']
-        print ("Description: " + varChoice)
+    varData = request.json()
+    varPlayer8 = varData ['player'] [7] ['strPlayer']
+    varBorn8 = varData ['player'][7]['dateBorn']
+    varPosition8 = varData ['player'][7]['strPosition']
+    varNationality8 = varData ['player'][7]['strNationality']
+    varDescription8 = varData ['player'][7]['strDescriptionEN']
+        
+    openWeb = input("Would you like to open this information in a webpage? Y/N \n")
+
+    if openWeb == "Y" or "y":
+            
+        writeHTML(varPlayer8, varBorn8, varPosition8, varNationality8, varDescription8)
+
+    elif openWeb == "N" or "n":
+
+        print(" ")
+        print("Thank you for using this program")
+        print(" ")
+        input("Press ENTER to quit the program")
 
     else:
-        print("Invalid Number")
-        print("Have A Nice Day!")
+
+        print(" ")
+        print("Invalid character given")
+        print(" ")
+        input("Press ENTER to quit the program")
 
 #––––––––––––––––––––––––––––––– Shkodran Mustafi –––––––––––––––––––––––––––––––
 
 if varPlayer == "9":
     print(" ")
-    varOptions = input("Selected: Shkodran Mustafi \nChoose An Option About This Player \n 1. Date of Birth \n 2. Location of Birth \n 3. Position \n 4. Description \n")
+    print ("Selected Player Is: Hector Bellerin")
 
-    if varOptions == "1":
-        varData = request.json()
-        varChoice = varData ['player'][8]['dateBorn']
-        print ("Date of Birth: " + varChoice)
-    elif varOptions == "2":
-        varData = request.json()
-        varChoice = varData ['player'][8]['strNationality']
-        print ("Location of Birth: " + varChoice)
-    elif varOptions == "3":
-        varData = request.json()
-        varChoice = varData ['player'][8]['strPosition']
-        print ("Position: " + varChoice)
-    elif varOptions == "4":
-        varData = request.json()
-        varChoice = varData ['player'][8]['strDescriptionEN']
-        print ("Description: " + varChoice)
+    varData = request.json()
+    varPlayer9 = varData ['player'] [8] ['strPlayer']
+    varBorn9 = varData ['player'][8]['dateBorn']
+    varPosition9 = varData ['player'][8]['strPosition']
+    varNationality9 = varData ['player'][8]['strNationality']
+    varDescription9 = varData ['player'][8]['strDescriptionEN']
+        
+    openWeb = input("Would you like to open this information in a webpage? Y/N \n")
+
+    if openWeb == "Y" or "y":
+            
+        writeHTML(varPlayer9, varBorn9, varPosition9, varNationality9, varDescription9)
+
+    elif openWeb == "N" or "n":
+
+        print(" ")
+        print("Thank you for using this program")
+        print(" ")
+        input("Press ENTER to quit the program")
 
     else:
-        print("Invalid Number")
-        print("Have A Nice Day!")
+
+        print(" ")
+        print("Invalid character given")
+        print(" ")
+        input("Press ENTER to quit the program")
 
 #–––––––––––––––––––––––––––––––––– David Luiz ––––––––––––––––––––––––––––––––––
 
 if varPlayer == "10":
     print(" ")
-    varOptions = input("Selected: David Luiz \nChoose An Option About This Player \n 1. Date of Birth \n 2. Location of Birth \n 3. Position \n 4. Description \n")
+    print ("Selected Player Is: David Luiz")
 
-    if varOptions == "1":
-        varData = request.json()
-        varChoice = varData ['player'][9]['dateBorn']
-        print ("Date of Birth: " + varChoice)
-    elif varOptions == "2":
-        varData = request.json()
-        varChoice = varData ['player'][9]['strNationality']
-        print ("Location of Birth: " + varChoice)
-    elif varOptions == "3":
-        varData = request.json()
-        varChoice = varData ['player'][9]['strPosition']
-        print ("Position: " + varChoice)
-    elif varOptions == "4":
-        varData = request.json()
-        varChoice = varData ['player'][9]['strDescriptionEN']
-        print ("Description: " + varChoice)
+    varData = request.json()
+    varPlayer10 = varData ['player'] [9] ['strPlayer']
+    varBorn10 = varData ['player'][9]['dateBorn']
+    varPosition10 = varData ['player'][9]['strPosition']
+    varNationality10 = varData ['player'][9]['strNationality']
+    varDescription10 = varData ['player'][9]['strDescriptionEN']
+        
+    openWeb = input("Would you like to open this information in a webpage? Y/N \n")
+
+    if openWeb == "Y" or "y":
+            
+        writeHTML(varPlayer10, varBorn10, varPosition10, varNationality10, varDescription10)
+
+    elif openWeb == "N" or "n":
+
+        print(" ")
+        print("Thank you for using this program")
+        print(" ")
+        input("Press ENTER to quit the program")
 
     else:
-        print("Invalid Number")
-        print("Have A Nice Day!")
+
+        print(" ")
+        print("Invalid character given")
+        print(" ")
+        input("Press ENTER to quit the program")
 
 #–––––––––––––––––––––––––– Sokratis Papastathopoulos ––––––––––––––––––––––––––
 
 if varPlayer == "11":
     print(" ")
-    varOptions = input("Selected: Sokratis Papastathopoulos \nChoose An Option About This Player \n 1. Date of Birth \n 2. Location of Birth \n 3. Position \n 4. Description \n")
+    print ("Selected Player Is: Sokratis Papastathopoulos")
 
-    if varOptions == "1":
-        varData = request.json()
-        varChoice = varData ['player'][10]['dateBorn']
-        print ("Date of Birth: " + varChoice)
-    elif varOptions == "2":
-        varData = request.json()
-        varChoice = varData ['player'][10]['strNationality']
-        print ("Location of Birth: " + varChoice)
-    elif varOptions == "3":
-        varData = request.json()
-        varChoice = varData ['player'][10]['strPosition']
-        print ("Position: " + varChoice)
-    elif varOptions == "4":
-        varData = request.json()
-        varChoice = varData ['player'][10]['strDescriptionEN']
-        print ("Description: " + varChoice)
+    varData = request.json()
+    varPlayer11 = varData ['player'] [10] ['strPlayer']
+    varBorn11 = varData ['player'][10]['dateBorn']
+    varPosition11 = varData ['player'][10]['strPosition']
+    varNationality11 = varData ['player'][10]['strNationality']
+    varDescription11 = varData ['player'][10]['strDescriptionEN']
+        
+    openWeb = input("Would you like to open this information in a webpage? Y/N \n")
+
+    if openWeb == "Y" or "y":
+            
+        writeHTML(varPlayer11, varBorn11, varPosition11, varNationality11, varDescription11)
+
+    elif openWeb == "N" or "n":
+
+        print(" ")
+        print("Thank you for using this program")
+        print(" ")
+        input("Press ENTER to quit the program")
 
     else:
-        print("Invalid Number")
-        print("Have A Nice Day!")
+
+        print(" ")
+        print("Invalid character given")
+        print(" ")
+        input("Press ENTER to quit the program")
 
 #–––––––––––––––––––––––––– Pierre-Emerick Aubameyang ––––––––––––––––––––––––––
 
 if varPlayer == "12":
     print(" ")
-    varOptions = input("Selected: Pierre-Emerick Aubameyang \nChoose An Option About This Player \n 1. Date of Birth \n 2. Location of Birth \n 3. Position \n 4. Description \n")
+    print ("Selected Player Is: Pierre-Emerick Aubameyang")
 
-    if varOptions == "1":
-        varData = request.json()
-        varChoice = varData ['player'][11]['dateBorn']
-        print ("Date of Birth: " + varChoice)
-    elif varOptions == "2":
-        varData = request.json()
-        varChoice = varData ['player'][11]['strNationality']
-        print ("Location of Birth: " + varChoice)
-    elif varOptions == "3":
-        varData = request.json()
-        varChoice = varData ['player'][11]['strPosition']
-        print ("Position: " + varChoice)
-    elif varOptions == "4":
-        varData = request.json()
-        varChoice = varData ['player'][11]['strDescriptionEN']
-        print ("Description: " + varChoice)
+    varData = request.json()
+    varPlayer12 = varData ['player'] [11] ['strPlayer']
+    varBorn12 = varData ['player'][11]['dateBorn']
+    varPosition12 = varData ['player'][11]['strPosition']
+    varNationality12 = varData ['player'][11]['strNationality']
+    varDescription12 = varData ['player'][11]['strDescriptionEN']
+        
+    openWeb = input("Would you like to open this information in a webpage? Y/N \n")
+
+    if openWeb == "Y" or "y":
+            
+        writeHTML(varPlayer12, varBorn12, varPosition12, varNationality12, varDescription12)
+
+    elif openWeb == "N" or "n":
+
+        print(" ")
+        print("Thank you for using this program")
+        print(" ")
+        input("Press ENTER to quit the program")
 
     else:
-        print("Invalid Number")
-        print("Have A Nice Day!")
+
+        print(" ")
+        print("Invalid character given")
+        print(" ")
+        input("Press ENTER to quit the program")
 
 #––––––––––––––––––––––––––––––––– Bernd Leno –––––––––––––––––––––––––––––––––
 
 if varPlayer == "13":
     print(" ")
-    varOptions = input("Selected: Bernd Leno \nChoose An Option About This Player \n 1. Date of Birth \n 2. Location of Birth \n 3. Position \n 4. Description \n")
+    print ("Selected Player Is: Bernd Leno")
 
-    if varOptions == "1":
-        varData = request.json()
-        varChoice = varData ['player'][12]['dateBorn']
-        print ("Date of Birth: " + varChoice)
-    elif varOptions == "2":
-        varData = request.json()
-        varChoice = varData ['player'][12]['strNationality']
-        print ("Location of Birth: " + varChoice)
-    elif varOptions == "3":
-        varData = request.json()
-        varChoice = varData ['player'][12]['strPosition']
-        print ("Position: " + varChoice)
-    elif varOptions == "4":
-        varData = request.json()
-        varChoice = varData ['player'][12]['strDescriptionEN']
-        print ("Description: " + varChoice)
+    varData = request.json()
+    varPlayer13 = varData ['player'] [12] ['strPlayer']
+    varBorn13 = varData ['player'][12]['dateBorn']
+    varPosition13 = varData ['player'][12]['strPosition']
+    varNationality13 = varData ['player'][12]['strNationality']
+    varDescription13 = varData ['player'][12]['strDescriptionEN']
+        
+    openWeb = input("Would you like to open this information in a webpage? Y/N \n")
+
+    if openWeb == "Y" or "y":
+            
+        writeHTML(varPlayer13, varBorn13, varPosition13, varNationality13, varDescription13)
+
+    elif openWeb == "N" or "n":
+
+        print(" ")
+        print("Thank you for using this program")
+        print(" ")
+        input("Press ENTER to quit the program")
 
     else:
-        print("Invalid Number")
-        print("Have A Nice Day!")
 
-#–––––––––––––––––––––––––––––– Daniel Cebellos ––––––––––––––––––––––––––––––
+        print(" ")
+        print("Invalid character given")
+        print(" ")
+        input("Press ENTER to quit the program")
+
+#–––––––––––––––––––––––––––––– Daniel Ceballos ––––––––––––––––––––––––––––––
 
 if varPlayer == "14":
     print(" ")
-    varOptions = input("Selected: Daniel Cebellos \nChoose An Option About This Player \n 1. Date of Birth \n 2. Location of Birth \n 3. Position \n 4. Description \n")
+    print ("Selected Player Is: Daniel Ceballos")
 
-    if varOptions == "1":
-        varData = request.json()
-        varChoice = varData ['player'][13]['dateBorn']
-        print ("Date of Birth: " + varChoice)
-    elif varOptions == "2":
-        varData = request.json()
-        varChoice = varData ['player'][13]['strNationality']
-        print ("Location of Birth: " + varChoice)
-    elif varOptions == "3":
-        varData = request.json()
-        varChoice = varData ['player'][13]['strPosition']
-        print ("Position: " + varChoice)
-    elif varOptions == "4":
-        varData = request.json()
-        varChoice = varData ['player'][13]['strDescriptionEN']
-        print ("Description: " + varChoice)
+    varData = request.json()
+    varPlayer14 = varData ['player'] [13] ['strPlayer']
+    varBorn14 = varData ['player'][13]['dateBorn']
+    varPosition14 = varData ['player'][13]['strPosition']
+    varNationality14 = varData ['player'][13]['strNationality']
+    varDescription14 = varData ['player'][13]['strDescriptionEN']
+        
+    openWeb = input("Would you like to open this information in a webpage? Y/N \n")
+
+    if openWeb == "Y" or "y":
+            
+        writeHTML(varPlayer14, varBorn14, varPosition14, varNationality14, varDescription14)
+
+    elif openWeb == "N" or "n":
+
+        print(" ")
+        print("Thank you for using this program")
+        print(" ")
+        input("Press ENTER to quit the program")
 
     else:
-        print("Invalid Number")
-        print("Have A Nice Day!")
+
+        print(" ")
+        print("Invalid character given")
+        print(" ")
+        input("Press ENTER to quit the program")
 
 #––––––––––––––––––––––––––––––– Granit Xhaka –––––––––––––––––––––––––––––––
 
 if varPlayer == "15":
     print(" ")
-    varOptions = input("Selected: Granit Xhaka \nChoose An Option About This Player \n 1. Date of Birth \n 2. Location of Birth \n 3. Position \n 4. Description \n")
+    print ("Selected Player Is: Granit Xhaka")
 
-    if varOptions == "1":
-        varData = request.json()
-        varChoice = varData ['player'][14]['dateBorn']
-        print ("Date of Birth: " + varChoice)
-    elif varOptions == "2":
-        varData = request.json()
-        varChoice = varData ['player'][14]['strNationality']
-        print ("Location of Birth: " + varChoice)
-    elif varOptions == "3":
-        varData = request.json()
-        varChoice = varData ['player'][14]['strPosition']
-        print ("Position: " + varChoice)
-    elif varOptions == "4":
-        varData = request.json()
-        varChoice = varData ['player'][14]['strDescriptionEN']
-        print ("Description: " + varChoice)
+    varData = request.json()
+    varPlayer15 = varData ['player'] [14] ['strPlayer']
+    varBorn15 = varData ['player'][14]['dateBorn']
+    varPosition15 = varData ['player'][14]['strPosition']
+    varNationality15 = varData ['player'][14]['strNationality']
+    varDescription15 = varData ['player'][14]['strDescriptionEN']
+        
+    openWeb = input("Would you like to open this information in a webpage? Y/N \n")
+
+    if openWeb == "Y" or "y":
+            
+        writeHTML(varPlayer15, varBorn15, varPosition15, varNationality15, varDescription15)
+
+    elif openWeb == "N" or "n":
+
+        print(" ")
+        print("Thank you for using this program")
+        print(" ")
+        input("Press ENTER to quit the program")
 
     else:
-        print("Invalid Number")
-        print("Have A Nice Day!")
+
+        print(" ")
+        print("Invalid character given")
+        print(" ")
+        input("Press ENTER to quit the program")
 
 #––––––––––––––––––––––––––––––– Rob Holding –––––––––––––––––––––––––––––––
 
 if varPlayer == "16":
     print(" ")
-    varOptions = input("Selected: Rob Holding \nChoose An Option About This Player \n 1. Date of Birth \n 2. Location of Birth \n 3. Position \n 4. Description \n")
+    print ("Selected Player Is: Rob Holding")
 
-    if varOptions == "1":
-        varData = request.json()
-        varChoice = varData ['player'][15]['dateBorn']
-        print ("Date of Birth: " + varChoice)
-    elif varOptions == "2":
-        varData = request.json()
-        varChoice = varData ['player'][15]['strNationality']
-        print ("Location of Birth: " + varChoice)
-    elif varOptions == "3":
-        varData = request.json()
-        varChoice = varData ['player'][15]['strPosition']
-        print ("Position: " + varChoice)
-    elif varOptions == "4":
-        varData = request.json()
-        varChoice = varData ['player'][15]['strDescriptionEN']
-        print ("Description: " + varChoice)
+    varData = request.json()
+    varPlayer16 = varData ['player'] [15] ['strPlayer']
+    varBorn16 = varData ['player'][15]['dateBorn']
+    varPosition16 = varData ['player'][15]['strPosition']
+    varNationality16 = varData ['player'][15]['strNationality']
+    varDescription16 = varData ['player'][15]['strDescriptionEN']
+        
+    openWeb = input("Would you like to open this information in a webpage? Y/N \n")
+
+    if openWeb == "Y" or "y":
+            
+        writeHTML(varPlayer16, varBorn16, varPosition16, varNationality16, varDescription16)
+
+    elif openWeb == "N" or "n":
+
+        print(" ")
+        print("Thank you for using this program")
+        print(" ")
+        input("Press ENTER to quit the program")
 
     else:
-        print("Invalid Number")
-        print("Have A Nice Day!")
+
+        print(" ")
+        print("Invalid character given")
+        print(" ")
+        input("Press ENTER to quit the program")
 
 #––––––––––––––––––––––––––––– Sead Kolasinac –––––––––––––––––––––––––––––
 
 if varPlayer == "17":
     print(" ")
-    varOptions = input("Selected: Sead Kolasinac \nChoose An Option About This Player \n 1. Date of Birth \n 2. Location of Birth \n 3. Position \n 4. Description \n")
+    print ("Selected Player Is: Sead Kolasinac")
 
-    if varOptions == "1":
-        varData = request.json()
-        varChoice = varData ['player'][16]['dateBorn']
-        print ("Date of Birth: " + varChoice)
-    elif varOptions == "2":
-        varData = request.json()
-        varChoice = varData ['player'][16]['strNationality']
-        print ("Location of Birth: " + varChoice)
-    elif varOptions == "3":
-        varData = request.json()
-        varChoice = varData ['player'][16]['strPosition']
-        print ("Position: " + varChoice)
-    elif varOptions == "4":
-        varData = request.json()
-        varChoice = varData ['player'][16]['strDescriptionEN']
-        print ("Description: " + varChoice)
+    varData = request.json()
+    varPlayer17 = varData ['player'] [16] ['strPlayer']
+    varBorn17 = varData ['player'][16]['dateBorn']
+    varPosition17 = varData ['player'][16]['strPosition']
+    varNationality17 = varData ['player'][16]['strNationality']
+    varDescription17 = varData ['player'][16]['strDescriptionEN']
+        
+    openWeb = input("Would you like to open this information in a webpage? Y/N \n")
+
+    if openWeb == "Y" or "y":
+            
+        writeHTML(varPlayer17, varBorn17, varPosition17, varNationality17, varDescription17)
+
+    elif openWeb == "N" or "n":
+
+        print(" ")
+        print("Thank you for using this program")
+        print(" ")
+        input("Press ENTER to quit the program")
 
     else:
-        print("Invalid Number")
-        print("Have A Nice Day!")
+
+        print(" ")
+        print("Invalid character given")
+        print(" ")
+        input("Press ENTER to quit the program")
 
 #–––––––––––––––––––––––– Konstantinos Mavropanos ––––––––––––––––––––––––
 
 if varPlayer == "18":
     print(" ")
-    varOptions = input("Selected: Konstantinos Mavropanos \nChoose An Option About This Player \n 1. Date of Birth \n 2. Location of Birth \n 3. Position \n 4. Description \n")
+    print ("Selected Player Is: Konstantinos Mavropanos")
 
-    if varOptions == "1":
-        varData = request.json()
-        varChoice = varData ['player'][17]['dateBorn']
-        print ("Date of Birth: " + varChoice)
-    elif varOptions == "2":
-        varData = request.json()
-        varChoice = varData ['player'][17]['strNationality']
-        print ("Location of Birth: " + varChoice)
-    elif varOptions == "3":
-        varData = request.json()
-        varChoice = varData ['player'][17]['strPosition']
-        print ("Position: " + varChoice)
-    elif varOptions == "4":
-        varData = request.json()
-        varChoice = varData ['player'][17]['strDescriptionEN']
-        print ("Description: " + varChoice)
+    varData = request.json()
+    varPlayer18 = varData ['player'] [17] ['strPlayer']
+    varBorn18 = varData ['player'][17]['dateBorn']
+    varPosition18 = varData ['player'][17]['strPosition']
+    varNationality18 = varData ['player'][17]['strNationality']
+    varDescription18 = varData ['player'][17]['strDescriptionEN']
+        
+    openWeb = input("Would you like to open this information in a webpage? Y/N \n")
+
+    if openWeb == "Y" or "y":
+            
+        writeHTML(varPlayer18, varBorn18, varPosition18, varNationality18, varDescription18)
+
+    elif openWeb == "N" or "n":
+
+        print(" ")
+        print("Thank you for using this program")
+        print(" ")
+        input("Press ENTER to quit the program")
 
     else:
-        print("Invalid Number")
-        print("Have A Nice Day!")
+
+        print(" ")
+        print("Invalid character given")
+        print(" ")
+        input("Press ENTER to quit the program")
 
 #––––––––––––––––––––––––––– Matteo Guendouzi –––––––––––––––––––––––––––
 
 if varPlayer == "19":
     print(" ")
-    varOptions = input("Selected: Matteo Guendouzi \nChoose An Option About This Player \n 1. Date of Birth \n 2. Location of Birth \n 3. Position \n 4. Description \n")
+    print ("Selected Player Is: Matteo Guendouzi")
 
-    if varOptions == "1":
-        varData = request.json()
-        varChoice = varData ['player'][18]['dateBorn']
-        print ("Date of Birth: " + varChoice)
-    elif varOptions == "2":
-        varData = request.json()
-        varChoice = varData ['player'][18]['strNationality']
-        print ("Location of Birth: " + varChoice)
-    elif varOptions == "3":
-        varData = request.json()
-        varChoice = varData ['player'][18]['strPosition']
-        print ("Position: " + varChoice)
-    elif varOptions == "4":
-        varData = request.json()
-        varChoice = varData ['player'][18]['strDescriptionEN']
-        print ("Description: " + varChoice)
+    varData = request.json()
+    varPlayer19 = varData ['player'] [18] ['strPlayer']
+    varBorn19 = varData ['player'][18]['dateBorn']
+    varPosition19 = varData ['player'][18]['strPosition']
+    varNationality19 = varData ['player'][18]['strNationality']
+    varDescription19 = varData ['player'][18]['strDescriptionEN']
+        
+    openWeb = input("Would you like to open this information in a webpage? Y/N \n")
+
+    if openWeb == "Y" or "y":
+            
+        writeHTML(varPlayer19, varBorn19, varPosition19, varNationality19, varDescription19)
+
+    elif openWeb == "N" or "n":
+
+        print(" ")
+        print("Thank you for using this program")
+        print(" ")
+        input("Press ENTER to quit the program")
 
     else:
-        print("Invalid Number")
-        print("Have A Nice Day!")
+
+        print(" ")
+        print("Invalid character given")
+        print(" ")
+        input("Press ENTER to quit the program")
 
 #–––––––––––––––––––––––––––– Lucas Torreira ––––––––––––––––––––––––––––
 
 if varPlayer == "20":
     print(" ")
-    varOptions = input("Selected: Lucas Torreira \nChoose An Option About This Player \n 1. Date of Birth \n 2. Location of Birth \n 3. Position \n 4. Description \n")
+    print ("Selected Player Is: Lucas Torreira")
 
-    if varOptions == "1":
-        varData = request.json()
-        varChoice = varData ['player'][19]['dateBorn']
-        print ("Date of Birth: " + varChoice)
-    elif varOptions == "2":
-        varData = request.json()
-        varChoice = varData ['player'][19]['strNationality']
-        print ("Location of Birth: " + varChoice)
-    elif varOptions == "3":
-        varData = request.json()
-        varChoice = varData ['player'][19]['strPosition']
-        print ("Position: " + varChoice)
-    elif varOptions == "4":
-        varData = request.json()
-        varChoice = varData ['player'][19]['strDescriptionEN']
-        print ("Description: " + varChoice)
+    varData = request.json()
+    varPlayer20 = varData ['player'] [19] ['strPlayer']
+    varBorn20 = varData ['player'][19]['dateBorn']
+    varPosition20 = varData ['player'][19]['strPosition']
+    varNationality20 = varData ['player'][19]['strNationality']
+    varDescription20 = varData ['player'][19]['strDescriptionEN']
+        
+    openWeb = input("Would you like to open this information in a webpage? Y/N \n")
+
+    if openWeb == "Y" or "y":
+            
+        writeHTML(varPlayer20, varBorn20, varPosition20, varNationality20, varDescription20)
+
+    elif openWeb == "N" or "n":
+
+        print(" ")
+        print("Thank you for using this program")
+        print(" ")
+        input("Press ENTER to quit the program")
 
     else:
-        print("Invalid Number")
-        print("Have A Nice Day!")
+
+        print(" ")
+        print("Invalid character given")
+        print(" ")
+        input("Press ENTER to quit the program")
 
 #––––––––––––––––––––––––––––– Unai Emery –––––––––––––––––––––––––––––
 
 if varPlayer == "21":
     print(" ")
-    varOptions = input("Selected: Unai Emery \nChoose An Option About This Player \n 1. Date of Birth \n 2. Location of Birth \n 3. Position \n 4. Description \n")
+    print ("Selected Player Is: Unai Emery")
 
-    if varOptions == "1":
-        varData = request.json()
-        varChoice = varData ['player'][20]['dateBorn']
-        print ("Date of Birth: " + varChoice)
-    elif varOptions == "2":
-        varData = request.json()
-        varChoice = varData ['player'][20]['strNationality']
-        print ("Location of Birth: " + varChoice)
-    elif varOptions == "3":
-        varData = request.json()
-        varChoice = varData ['player'][20]['strPosition']
-        print ("Position: " + varChoice)
-    elif varOptions == "4":
-        varData = request.json()
-        varChoice = varData ['player'][20]['strDescriptionEN']
-        print ("Description: " + varChoice)
+    varData = request.json()
+    varPlayer21 = varData ['player'] [20] ['strPlayer']
+    varBorn21 = varData ['player'][20]['dateBorn']
+    varPosition21 = varData ['player'][20]['strPosition']
+    varNationality21 = varData ['player'][20]['strNationality']
+    varDescription21 = varData ['player'][20]['strDescriptionEN']
+        
+    openWeb = input("Would you like to open this information in a webpage? Y/N \n")
+
+    if openWeb == "Y" or "y":
+            
+        writeHTML(varPlayer21, varBorn21, varPosition21, varNationality21, varDescription21)
+
+    elif openWeb == "N" or "n":
+
+        print(" ")
+        print("Thank you for using this program")
+        print(" ")
+        input("Press ENTER to quit the program")
 
     else:
-        print("Invalid Number")
-        print("Have A Nice Day!")
+
+        print(" ")
+        print("Invalid character given")
+        print(" ")
+        input("Press ENTER to quit the program")
 
 #–––––––––––––––––––––––––––– Nicolas Pepe ––––––––––––––––––––––––––––
 
 if varPlayer == "22":
     print(" ")
-    varOptions = input("Selected: Nicolas Pepe \nChoose An Option About This Player \n 1. Date of Birth \n 2. Location of Birth \n 3. Position \n 4. Description \n")
+    print ("Selected Player Is: Nicolas Pepe")
 
-    if varOptions == "1":
-        varData = request.json()
-        varChoice = varData ['player'][21]['dateBorn']
-        print ("Date of Birth: " + varChoice)
-    elif varOptions == "2":
-        varData = request.json()
-        varChoice = varData ['player'][21]['strNationality']
-        print ("Location of Birth: " + varChoice)
-    elif varOptions == "3":
-        varData = request.json()
-        varChoice = varData ['player'][21]['strPosition']
-        print ("Position: " + varChoice)
-    elif varOptions == "4":
-        varData = request.json()
-        varChoice = varData ['player'][21]['strDescriptionEN']
-        print ("Description: " + varChoice)
+    varData = request.json()
+    varPlayer22 = varData ['player'] [21] ['strPlayer']
+    varBorn22 = varData ['player'][21]['dateBorn']
+    varPosition22 = varData ['player'][21]['strPosition']
+    varNationality22 = varData ['player'][21]['strNationality']
+    varDescription22 = varData ['player'][21]['strDescriptionEN']
+        
+    openWeb = input("Would you like to open this information in a webpage? Y/N \n")
+
+    if openWeb == "Y" or "y":
+            
+        writeHTML(varPlayer22, varBorn22, varPosition22, varNationality22, varDescription22)
+
+    elif openWeb == "N" or "n":
+
+        print(" ")
+        print("Thank you for using this program")
+        print(" ")
+        input("Press ENTER to quit the program")
 
     else:
-        print("Invalid Number")
-        print("Have A Nice Day!")
+
+        print(" ")
+        print("Invalid character given")
+        print(" ")
+        input("Press ENTER to quit the program")
 
 #–––––––––––––––––––––––––– Jherson Vergara ––––––––––––––––––––––––––
 
 if varPlayer == "23":
     print(" ")
-    varOptions = input("Selected: Jherson Vergara \nChoose An Option About This Player \n 1. Date of Birth \n 2. Location of Birth \n 3. Position \n 4. Description \n")
+    print ("Selected Player Is: Jherson Vergara")
 
-    if varOptions == "1":
-        varData = request.json()
-        varChoice = varData ['player'][22]['dateBorn']
-        print ("Date of Birth: " + varChoice)
-    elif varOptions == "2":
-        varData = request.json()
-        varChoice = varData ['player'][22]['strNationality']
-        print ("Location of Birth: " + varChoice)
-    elif varOptions == "3":
-        varData = request.json()
-        varChoice = varData ['player'][22]['strPosition']
-        print ("Position: " + varChoice)
-    elif varOptions == "4":
-        varData = request.json()
-        varChoice = varData ['player'][22]['strDescriptionEN']
-        print ("Description: " + varChoice)
+    varData = request.json()
+    varPlayer23 = varData ['player'] [22] ['strPlayer']
+    varBorn23 = varData ['player'][22]['dateBorn']
+    varPosition23 = varData ['player'][22]['strPosition']
+    varNationality23 = varData ['player'][22]['strNationality']
+    varDescription23 = varData ['player'][22]['strDescriptionEN']
+        
+    openWeb = input("Would you like to open this information in a webpage? Y/N \n")
+
+    if openWeb == "Y" or "y":
+            
+        writeHTML(varPlayer23, varBorn23, varPosition23, varNationality23, varDescription23)
+
+    elif openWeb == "N" or "n":
+
+        print(" ")
+        print("Thank you for using this program")
+        print(" ")
+        input("Press ENTER to quit the program")
 
     else:
-        print("Invalid Number")
-        print("Have A Nice Day!")
+
+        print(" ")
+        print("Invalid character given")
+        print(" ")
+        input("Press ENTER to quit the program")
 
 #–––––––––––––––––––––––––– Victor Alvarez ––––––––––––––––––––––––––
 
 if varPlayer == "24":
     print(" ")
-    varOptions = input("Selected: Victor Alvarez \nChoose An Option About This Player \n 1. Date of Birth \n 2. Location of Birth \n 3. Position \n 4. Description \n")
+    print ("Selected Player Is: Victor Alvarez")
 
-    if varOptions == "1":
-        varData = request.json()
-        varChoice = varData ['player'][23]['dateBorn']
-        print ("Date of Birth: " + varChoice)
-    elif varOptions == "2":
-        varData = request.json()
-        varChoice = varData ['player'][23]['strNationality']
-        print ("Location of Birth: " + varChoice)
-    elif varOptions == "3":
-        varData = request.json()
-        varChoice = varData ['player'][23]['strPosition']
-        print ("Position: " + varChoice)
-    elif varOptions == "4":
-        varData = request.json()
-        varChoice = varData ['player'][23]['strDescriptionEN']
-        print ("Description: " + varChoice)
+    varData = request.json()
+    varPlayer24 = varData ['player'] [23] ['strPlayer']
+    varBorn24 = varData ['player'][23]['dateBorn']
+    varPosition24 = varData ['player'][23]['strPosition']
+    varNationality24 = varData ['player'][23]['strNationality']
+    varDescription24 = varData ['player'][23]['strDescriptionEN']
+        
+    openWeb = input("Would you like to open this information in a webpage? Y/N \n")
+
+    if openWeb == "Y" or "y":
+            
+        writeHTML(varPlayer24, varBorn24, varPosition24, varNationality24, varDescription24)
+
+    elif openWeb == "N" or "n":
+
+        print(" ")
+        print("Thank you for using this program")
+        print(" ")
+        input("Press ENTER to quit the program")
 
     else:
-        print("Invalid Number")
-        print("Have A Nice Day!")
+
+        print(" ")
+        print("Invalid character given")
+        print(" ")
+        input("Press ENTER to quit the program")
 
 #––––––––––––––––––––––––– Maksim Belyayev –––––––––––––––––––––––––
 
 if varPlayer == "25":
     print(" ")
-    varOptions = input("Selected: Maksim Belyayev \nChoose An Option About This Player \n 1. Date of Birth \n 2. Location of Birth \n 3. Position \n 4. Description \n")
+    print ("Selected Player Is: Maksim Belyayev")
 
-    if varOptions == "1":
-        varData = request.json()
-        varChoice = varData ['player'][24]['dateBorn']
-        print ("Date of Birth: " + varChoice)
-    elif varOptions == "2":
-        varData = request.json()
-        varChoice = varData ['player'][24]['strNationality']
-        print ("Location of Birth: " + varChoice)
-    elif varOptions == "3":
-        varData = request.json()
-        varChoice = varData ['player'][24]['strPosition']
-        print ("Position: " + varChoice)
-    elif varOptions == "4":
-        varData = request.json()
-        varChoice = varData ['player'][24]['strDescriptionEN']
-        print ("Description: " + varChoice)
+    varData = request.json()
+    varPlayer25 = varData ['player'] [24] ['strPlayer']
+    varBorn25 = varData ['player'][24]['dateBorn']
+    varPosition25 = varData ['player'][24]['strPosition']
+    varNationality25 = varData ['player'][24]['strNationality']
+    varDescription25 = varData ['player'][24]['strDescriptionEN']
+        
+    openWeb = input("Would you like to open this information in a webpage? Y/N \n")
+
+    if openWeb == "Y" or "y":
+            
+        writeHTML(varPlayer25, varBorn25, varPosition25, varNationality25, varDescription25)
+
+    elif openWeb == "N" or "n":
+
+        print(" ")
+        print("Thank you for using this program")
+        print(" ")
+        input("Press ENTER to quit the program")
 
     else:
-        print("Invalid Number")
-        print("Have A Nice Day!")
 
-#–––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––––
-
-input("Press ENTER to quit the program")
+        print(" ")
+        print("Invalid character given")
+        print(" ")
+        input("Press ENTER to quit the program")
