@@ -142,16 +142,16 @@ if varPlayer == "1":
     varDescription1 = varData ['player'][0]['strDescriptionEN']
 
     #Allows the user to either enter "y" for yes and "n" for no    
-    openWeb = input("Would you like to open this information in a webpage? Y/N \n")
+    openWeb = input("Would you like to open this information in a webpage? y/n \n")
 
     #The user can either enter a capital or lowercase "y"
-    if openWeb == "Y" or "y":
+    if openWeb == "y":
         
         #These variables are used in the HTML section above
         writeHTML(varPlayer1, varBorn1, varPosition1, varNationality1, varDescription1)
 
     #The user can either enter a capital or lowercase "n"
-    elif openWeb == "N" or "n":
+    elif openWeb == "n":
 
         print(" ")
         print("Thank you for using this program")
@@ -160,11 +160,11 @@ if varPlayer == "1":
         #A graceful way to exit the program
         input("Press ENTER to quit the program")
 
-    #If the user types anything else besides a "Y", "y", "N" or "n", then the program would display that the character is invalid
+    #If the user types anything else besides a "y" or "n", then the program would display that the character is invalid
     else:
 
         print(" ")
-        print("Invalid character given")
+        print("Invalid Character Given")
         print(" ")
         input("Press ENTER to quit the program")
 
@@ -184,11 +184,11 @@ elif varPlayer == "2":
         
     openWeb = input("Would you like to open this information in a webpage? Y/N \n")
 
-    if openWeb == "Y" or "y":
+    if openWeb == "y":
             
         writeHTML(varPlayer2, varBorn2, varPosition2, varNationality2, varDescription2)
 
-    elif openWeb == "N" or "n":
+    elif openWeb == "n":
 
         print(" ")
         print("Thank you for using this program")
@@ -198,13 +198,13 @@ elif varPlayer == "2":
     else:
 
         print(" ")
-        print("Invalid character given")
+        print("Invalid Character Given")
         print(" ")
         input("Press ENTER to quit the program")
 
 #––––––––––––––––––––––––––––––––– Emiliano Martinez –––––––––––––––––––––––––––––––––
 
-if varPlayer == "3":
+elif varPlayer == "3":
     print(" ")
     print ("Selected Player: Emiliano Martinez")
 
@@ -217,11 +217,11 @@ if varPlayer == "3":
         
     openWeb = input("Would you like to open this information in a webpage? Y/N \n")
 
-    if openWeb == "Y" or "y":
+    if openWeb == "y":
             
         writeHTML(varPlayer3, varBorn3, varPosition3, varNationality3, varDescription3)
 
-    elif openWeb == "N" or "n":
+    elif openWeb == "n":
 
         print(" ")
         print("Thank you for using this program")
@@ -231,13 +231,13 @@ if varPlayer == "3":
     else:
 
         print(" ")
-        print("Invalid character given")
+        print("Invalid Character Given")
         print(" ")
         input("Press ENTER to quit the program")
 
 #–––––––––––––––––––––––––––––––––– Calum Chambers ––––––––––––––––––––––––––––––––––
 
-if varPlayer == "4":
+elif varPlayer == "4":
     print(" ")
     print ("Selected Player: Calum Chambers")
 
@@ -250,11 +250,11 @@ if varPlayer == "4":
         
     openWeb = input("Would you like to open this information in a webpage? Y/N \n")
 
-    if openWeb == "Y" or "y":
+    if openWeb == "y":
             
-        writeHTML(varPlayer3, varBorn3, varPosition3, varNationality3, varDescription3)
+        writeHTML(varPlayer4, varBorn4, varPosition4, varNationality4, varDescription4)
 
-    elif openWeb == "N" or "n":
+    elif openWeb == "n":
 
         print(" ")
         print("Thank you for using this program")
@@ -264,13 +264,13 @@ if varPlayer == "4":
     else:
 
         print(" ")
-        print("Invalid character given")
+        print("Invalid Character Given")
         print(" ")
         input("Press ENTER to quit the program")
 
 #––––––––––––––––––––––––––––––––––– Matt Macey –––––––––––––––––––––––––––––––––––
 
-if varPlayer == "5":
+elif varPlayer == "5":
     print(" ")
     print ("Selected Player: Matt Macey")
 
@@ -283,11 +283,11 @@ if varPlayer == "5":
         
     openWeb = input("Would you like to open this information in a webpage? Y/N \n")
 
-    if openWeb == "Y" or "y":
+    if openWeb == "y":
             
         writeHTML(varPlayer5, varBorn5, varPosition5, varNationality5, varDescription5)
 
-    elif openWeb == "N" or "n":
+    elif openWeb == "n":
 
         print(" ")
         print("Thank you for using this program")
@@ -297,13 +297,13 @@ if varPlayer == "5":
     else:
 
         print(" ")
-        print("Invalid character given")
+        print("Invalid Character Given")
         print(" ")
         input("Press ENTER to quit the program")
 
 #––––––––––––––––––––––––––––– Ainsley Maitland-Niles –––––––––––––––––––––––––––––
 
-if varPlayer == "6":
+elif varPlayer == "6":
     print(" ")
     print ("Selected Player: Ainsley Maitland-Niles")
 
@@ -316,11 +316,11 @@ if varPlayer == "6":
         
     openWeb = input("Would you like to open this information in a webpage? Y/N \n")
 
-    if openWeb == "Y" or "y":
+    if openWeb == "y":
             
         writeHTML(varPlayer6, varBorn6, varPosition6, varNationality6, varDescription6)
 
-    elif openWeb == "N" or "n":
+    elif openWeb == "n":
 
         print(" ")
         print("Thank you for using this program")
@@ -330,13 +330,13 @@ if varPlayer == "6":
     else:
 
         print(" ")
-        print("Invalid character given")
+        print("Invalid Character Given")
         print(" ")
         input("Press ENTER to quit the program")
 
 #––––––––––––––––––––––––––––––––– Kieran Tierney ––––––––––––––––––––––––––––––––
 
-if varPlayer == "7":
+elif varPlayer == "7":
     print(" ")
     print ("Selected Player: Kieran Tierney")
 
@@ -349,11 +349,11 @@ if varPlayer == "7":
         
     openWeb = input("Would you like to open this information in a webpage? Y/N \n")
 
-    if openWeb == "Y" or "y":
+    if openWeb == "y":
             
         writeHTML(varPlayer7, varBorn7, varPosition7, varNationality7, varDescription7)
 
-    elif openWeb == "N" or "n":
+    elif openWeb == "n":
 
         print(" ")
         print("Thank you for using this program")
@@ -363,13 +363,13 @@ if varPlayer == "7":
     else:
 
         print(" ")
-        print("Invalid character given")
+        print("Invalid Character Given")
         print(" ")
         input("Press ENTER to quit the program")
 
 #–––––––––––––––––––––––––––––– Alexandre Lacazette ––––––––––––––––––––––––––––––
 
-if varPlayer == "8":
+elif varPlayer == "8":
     print(" ")
     print ("Selected Player: Alexandre Lacazette")
 
@@ -382,11 +382,11 @@ if varPlayer == "8":
         
     openWeb = input("Would you like to open this information in a webpage? Y/N \n")
 
-    if openWeb == "Y" or "y":
+    if openWeb == "y":
             
         writeHTML(varPlayer8, varBorn8, varPosition8, varNationality8, varDescription8)
 
-    elif openWeb == "N" or "n":
+    elif openWeb == "n":
 
         print(" ")
         print("Thank you for using this program")
@@ -396,15 +396,15 @@ if varPlayer == "8":
     else:
 
         print(" ")
-        print("Invalid character given")
+        print("Invalid Character Given")
         print(" ")
         input("Press ENTER to quit the program")
 
 #––––––––––––––––––––––––––––––– Shkodran Mustafi –––––––––––––––––––––––––––––––
 
-if varPlayer == "9":
+elif varPlayer == "9":
     print(" ")
-    print ("Selected Player: Hector Bellerin")
+    print ("Selected Player: Shkodran Mustafi")
 
     varData = request.json()
     varPlayer9 = varData ['player'] [8] ['strPlayer']
@@ -415,11 +415,11 @@ if varPlayer == "9":
         
     openWeb = input("Would you like to open this information in a webpage? Y/N \n")
 
-    if openWeb == "Y" or "y":
+    if openWeb == "y":
             
         writeHTML(varPlayer9, varBorn9, varPosition9, varNationality9, varDescription9)
 
-    elif openWeb == "N" or "n":
+    elif openWeb == "n":
 
         print(" ")
         print("Thank you for using this program")
@@ -429,13 +429,13 @@ if varPlayer == "9":
     else:
 
         print(" ")
-        print("Invalid character given")
+        print("Invalid Character Given")
         print(" ")
         input("Press ENTER to quit the program")
 
 #–––––––––––––––––––––––––––––––––– David Luiz ––––––––––––––––––––––––––––––––––
 
-if varPlayer == "10":
+elif varPlayer == "10":
     print(" ")
     print ("Selected Player: David Luiz")
 
@@ -448,11 +448,11 @@ if varPlayer == "10":
         
     openWeb = input("Would you like to open this information in a webpage? Y/N \n")
 
-    if openWeb == "Y" or "y":
+    if openWeb == "y":
             
         writeHTML(varPlayer10, varBorn10, varPosition10, varNationality10, varDescription10)
 
-    elif openWeb == "N" or "n":
+    elif openWeb == "n":
 
         print(" ")
         print("Thank you for using this program")
@@ -462,7 +462,7 @@ if varPlayer == "10":
     else:
 
         print(" ")
-        print("Invalid character given")
+        print("Invalid Character Given")
         print(" ")
         input("Press ENTER to quit the program")
 
@@ -481,11 +481,11 @@ if varPlayer == "11":
         
     openWeb = input("Would you like to open this information in a webpage? Y/N \n")
 
-    if openWeb == "Y" or "y":
+    if openWeb == "y":
             
         writeHTML(varPlayer11, varBorn11, varPosition11, varNationality11, varDescription11)
 
-    elif openWeb == "N" or "n":
+    elif openWeb == "n":
 
         print(" ")
         print("Thank you for using this program")
@@ -495,13 +495,13 @@ if varPlayer == "11":
     else:
 
         print(" ")
-        print("Invalid character given")
+        print("Invalid Character Given")
         print(" ")
         input("Press ENTER to quit the program")
 
 #–––––––––––––––––––––––––– Pierre-Emerick Aubameyang ––––––––––––––––––––––––––
 
-if varPlayer == "12":
+elif varPlayer == "12":
     print(" ")
     print ("Selected Player: Pierre-Emerick Aubameyang")
 
@@ -514,11 +514,11 @@ if varPlayer == "12":
         
     openWeb = input("Would you like to open this information in a webpage? Y/N \n")
 
-    if openWeb == "Y" or "y":
+    if openWeb == "y":
             
         writeHTML(varPlayer12, varBorn12, varPosition12, varNationality12, varDescription12)
 
-    elif openWeb == "N" or "n":
+    elif openWeb == "n":
 
         print(" ")
         print("Thank you for using this program")
@@ -528,13 +528,13 @@ if varPlayer == "12":
     else:
 
         print(" ")
-        print("Invalid character given")
+        print("Invalid Character Given")
         print(" ")
         input("Press ENTER to quit the program")
 
 #––––––––––––––––––––––––––––––––– Bernd Leno –––––––––––––––––––––––––––––––––
 
-if varPlayer == "13":
+elif varPlayer == "13":
     print(" ")
     print ("Selected Player: Bernd Leno")
 
@@ -547,11 +547,11 @@ if varPlayer == "13":
         
     openWeb = input("Would you like to open this information in a webpage? Y/N \n")
 
-    if openWeb == "Y" or "y":
+    if openWeb == "y":
             
         writeHTML(varPlayer13, varBorn13, varPosition13, varNationality13, varDescription13)
 
-    elif openWeb == "N" or "n":
+    elif openWeb == "n":
 
         print(" ")
         print("Thank you for using this program")
@@ -561,13 +561,13 @@ if varPlayer == "13":
     else:
 
         print(" ")
-        print("Invalid character given")
+        print("Invalid Character Given")
         print(" ")
         input("Press ENTER to quit the program")
 
 #–––––––––––––––––––––––––––––– Daniel Ceballos ––––––––––––––––––––––––––––––
 
-if varPlayer == "14":
+elif varPlayer == "14":
     print(" ")
     print ("Selected Player: Daniel Ceballos")
 
@@ -580,11 +580,11 @@ if varPlayer == "14":
         
     openWeb = input("Would you like to open this information in a webpage? Y/N \n")
 
-    if openWeb == "Y" or "y":
+    if openWeb == "y":
             
         writeHTML(varPlayer14, varBorn14, varPosition14, varNationality14, varDescription14)
 
-    elif openWeb == "N" or "n":
+    elif openWeb == "n":
 
         print(" ")
         print("Thank you for using this program")
@@ -594,13 +594,13 @@ if varPlayer == "14":
     else:
 
         print(" ")
-        print("Invalid character given")
+        print("Invalid Character Given")
         print(" ")
         input("Press ENTER to quit the program")
 
 #––––––––––––––––––––––––––––––– Granit Xhaka –––––––––––––––––––––––––––––––
 
-if varPlayer == "15":
+elif varPlayer == "15":
     print(" ")
     print ("Selected Player: Granit Xhaka")
 
@@ -613,11 +613,11 @@ if varPlayer == "15":
         
     openWeb = input("Would you like to open this information in a webpage? Y/N \n")
 
-    if openWeb == "Y" or "y":
+    if openWeb == "y":
             
         writeHTML(varPlayer15, varBorn15, varPosition15, varNationality15, varDescription15)
 
-    elif openWeb == "N" or "n":
+    elif openWeb == "n":
 
         print(" ")
         print("Thank you for using this program")
@@ -627,13 +627,13 @@ if varPlayer == "15":
     else:
 
         print(" ")
-        print("Invalid character given")
+        print("Invalid Character Given")
         print(" ")
         input("Press ENTER to quit the program")
 
 #––––––––––––––––––––––––––––––– Rob Holding –––––––––––––––––––––––––––––––
 
-if varPlayer == "16":
+elif varPlayer == "16":
     print(" ")
     print ("Selected Player: Rob Holding")
 
@@ -646,11 +646,11 @@ if varPlayer == "16":
         
     openWeb = input("Would you like to open this information in a webpage? Y/N \n")
 
-    if openWeb == "Y" or "y":
+    if openWeb == "y":
             
         writeHTML(varPlayer16, varBorn16, varPosition16, varNationality16, varDescription16)
 
-    elif openWeb == "N" or "n":
+    elif openWeb == "n":
 
         print(" ")
         print("Thank you for using this program")
@@ -660,13 +660,13 @@ if varPlayer == "16":
     else:
 
         print(" ")
-        print("Invalid character given")
+        print("Invalid Character Given")
         print(" ")
         input("Press ENTER to quit the program")
 
 #––––––––––––––––––––––––––––– Sead Kolasinac –––––––––––––––––––––––––––––
 
-if varPlayer == "17":
+elif varPlayer == "17":
     print(" ")
     print ("Selected Player: Sead Kolasinac")
 
@@ -679,11 +679,11 @@ if varPlayer == "17":
         
     openWeb = input("Would you like to open this information in a webpage? Y/N \n")
 
-    if openWeb == "Y" or "y":
+    if openWeb == "y":
             
         writeHTML(varPlayer17, varBorn17, varPosition17, varNationality17, varDescription17)
 
-    elif openWeb == "N" or "n":
+    elif openWeb == "n":
 
         print(" ")
         print("Thank you for using this program")
@@ -693,13 +693,13 @@ if varPlayer == "17":
     else:
 
         print(" ")
-        print("Invalid character given")
+        print("Invalid Character Given")
         print(" ")
         input("Press ENTER to quit the program")
 
 #–––––––––––––––––––––––– Konstantinos Mavropanos ––––––––––––––––––––––––
 
-if varPlayer == "18":
+elif varPlayer == "18":
     print(" ")
     print ("Selected Player: Konstantinos Mavropanos")
 
@@ -712,11 +712,11 @@ if varPlayer == "18":
         
     openWeb = input("Would you like to open this information in a webpage? Y/N \n")
 
-    if openWeb == "Y" or "y":
+    if openWeb == "y":
             
         writeHTML(varPlayer18, varBorn18, varPosition18, varNationality18, varDescription18)
 
-    elif openWeb == "N" or "n":
+    elif openWeb == "n":
 
         print(" ")
         print("Thank you for using this program")
@@ -726,13 +726,13 @@ if varPlayer == "18":
     else:
 
         print(" ")
-        print("Invalid character given")
+        print("Invalid Character Given")
         print(" ")
         input("Press ENTER to quit the program")
 
 #––––––––––––––––––––––––––– Matteo Guendouzi –––––––––––––––––––––––––––
 
-if varPlayer == "19":
+elif varPlayer == "19":
     print(" ")
     print ("Selected Player: Matteo Guendouzi")
 
@@ -745,11 +745,11 @@ if varPlayer == "19":
         
     openWeb = input("Would you like to open this information in a webpage? Y/N \n")
 
-    if openWeb == "Y" or "y":
+    if openWeb == "y":
             
         writeHTML(varPlayer19, varBorn19, varPosition19, varNationality19, varDescription19)
 
-    elif openWeb == "N" or "n":
+    elif openWeb == "n":
 
         print(" ")
         print("Thank you for using this program")
@@ -759,13 +759,13 @@ if varPlayer == "19":
     else:
 
         print(" ")
-        print("Invalid character given")
+        print("Invalid Character Given")
         print(" ")
         input("Press ENTER to quit the program")
 
 #–––––––––––––––––––––––––––– Lucas Torreira ––––––––––––––––––––––––––––
 
-if varPlayer == "20":
+elif varPlayer == "20":
     print(" ")
     print ("Selected Player: Lucas Torreira")
 
@@ -778,11 +778,11 @@ if varPlayer == "20":
         
     openWeb = input("Would you like to open this information in a webpage? Y/N \n")
 
-    if openWeb == "Y" or "y":
+    if openWeb == "y":
             
         writeHTML(varPlayer20, varBorn20, varPosition20, varNationality20, varDescription20)
 
-    elif openWeb == "N" or "n":
+    elif openWeb == "n":
 
         print(" ")
         print("Thank you for using this program")
@@ -792,13 +792,13 @@ if varPlayer == "20":
     else:
 
         print(" ")
-        print("Invalid character given")
+        print("Invalid Character Given")
         print(" ")
         input("Press ENTER to quit the program")
 
 #––––––––––––––––––––––––––––– Unai Emery –––––––––––––––––––––––––––––
 
-if varPlayer == "21":
+elif varPlayer == "21":
     print(" ")
     print ("Selected Player: Unai Emery")
 
@@ -811,11 +811,11 @@ if varPlayer == "21":
         
     openWeb = input("Would you like to open this information in a webpage? Y/N \n")
 
-    if openWeb == "Y" or "y":
+    if openWeb == "y":
             
         writeHTML(varPlayer21, varBorn21, varPosition21, varNationality21, varDescription21)
 
-    elif openWeb == "N" or "n":
+    elif openWeb == "n":
 
         print(" ")
         print("Thank you for using this program")
@@ -825,13 +825,13 @@ if varPlayer == "21":
     else:
 
         print(" ")
-        print("Invalid character given")
+        print("Invalid Character Given")
         print(" ")
         input("Press ENTER to quit the program")
 
 #–––––––––––––––––––––––––––– Nicolas Pepe ––––––––––––––––––––––––––––
 
-if varPlayer == "22":
+elif varPlayer == "22":
     print(" ")
     print ("Selected Player: Nicolas Pepe")
 
@@ -844,11 +844,11 @@ if varPlayer == "22":
         
     openWeb = input("Would you like to open this information in a webpage? Y/N \n")
 
-    if openWeb == "Y" or "y":
+    if openWeb == "y":
             
         writeHTML(varPlayer22, varBorn22, varPosition22, varNationality22, varDescription22)
 
-    elif openWeb == "N" or "n":
+    elif openWeb == "n":
 
         print(" ")
         print("Thank you for using this program")
@@ -858,13 +858,13 @@ if varPlayer == "22":
     else:
 
         print(" ")
-        print("Invalid character given")
+        print("Invalid Character Given")
         print(" ")
         input("Press ENTER to quit the program")
 
 #–––––––––––––––––––––––––– Jherson Vergara ––––––––––––––––––––––––––
 
-if varPlayer == "23":
+elif varPlayer == "23":
     print(" ")
     print ("Selected Player: Jherson Vergara")
 
@@ -877,11 +877,11 @@ if varPlayer == "23":
         
     openWeb = input("Would you like to open this information in a webpage? Y/N \n")
 
-    if openWeb == "Y" or "y":
+    if openWeb == "y":
             
         writeHTML(varPlayer23, varBorn23, varPosition23, varNationality23, varDescription23)
 
-    elif openWeb == "N" or "n":
+    elif openWeb == "n":
 
         print(" ")
         print("Thank you for using this program")
@@ -891,13 +891,13 @@ if varPlayer == "23":
     else:
 
         print(" ")
-        print("Invalid character given")
+        print("Invalid Character Given")
         print(" ")
         input("Press ENTER to quit the program")
 
 #–––––––––––––––––––––––––– Victor Alvarez ––––––––––––––––––––––––––
 
-if varPlayer == "24":
+elif varPlayer == "24":
     print(" ")
     print ("Selected Player: Victor Alvarez")
 
@@ -910,11 +910,11 @@ if varPlayer == "24":
         
     openWeb = input("Would you like to open this information in a webpage? Y/N \n")
 
-    if openWeb == "Y" or "y":
+    if openWeb == "y":
             
         writeHTML(varPlayer24, varBorn24, varPosition24, varNationality24, varDescription24)
 
-    elif openWeb == "N" or "n":
+    elif openWeb == "n":
 
         print(" ")
         print("Thank you for using this program")
@@ -924,13 +924,13 @@ if varPlayer == "24":
     else:
 
         print(" ")
-        print("Invalid character given")
+        print("Invalid Character Given")
         print(" ")
         input("Press ENTER to quit the program")
 
 #––––––––––––––––––––––––– Maksim Belyayev –––––––––––––––––––––––––
 
-if varPlayer == "25":
+elif varPlayer == "25":
     print(" ")
     print ("Selected Player: Maksim Belyayev")
 
@@ -943,11 +943,11 @@ if varPlayer == "25":
         
     openWeb = input("Would you like to open this information in a webpage? Y/N \n")
 
-    if openWeb == "Y" or "y":
+    if openWeb == "y":
             
         writeHTML(varPlayer25, varBorn25, varPosition25, varNationality25, varDescription25)
 
-    elif openWeb == "N" or "n":
+    elif openWeb == "n":
 
         print(" ")
         print("Thank you for using this program")
@@ -957,6 +957,6 @@ if varPlayer == "25":
     else:
 
         print(" ")
-        print("Invalid character given")
+        print("Invalid Character Given")
         print(" ")
         input("Press ENTER to quit the program")
