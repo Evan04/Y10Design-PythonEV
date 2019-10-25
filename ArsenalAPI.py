@@ -1,6 +1,6 @@
 #Evan Van
 #Upper Canada College
-#Y10 Coding
+#Y10 Design - Coding
 #Mr. Jugoon
 
 import json
@@ -102,7 +102,7 @@ def writeHTML(data1, data2, data3, data4, data5):
 
     <div class="image2">
       <div class="caption">
-      <span class="border">Go to <a href='https://www.thesportsdb.com/api.php'>The Sports DB</a> for API Info.</span>
+      <span class="border">Go to <a href='https://www.thesportsdb.com/api.php'>The Sports DB</a> for API Info</span>
       </div>
     </div>
 
