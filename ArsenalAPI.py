@@ -182,7 +182,7 @@ elif varPlayer == "2":
     varNationality2 = varData ['player'][1]['strNationality']
     varDescription2 = varData ['player'][1]['strDescriptionEN']
         
-    openWeb = input("Would you like to open this information in a webpage? Y/N \n")
+    openWeb = input("Would you like to open this information in a webpage? y/n \n")
 
     if openWeb == "y":
             
@@ -215,7 +215,7 @@ elif varPlayer == "3":
     varNationality3 = varData ['player'][2]['strNationality']
     varDescription3 = varData ['player'][2]['strDescriptionEN']
         
-    openWeb = input("Would you like to open this information in a webpage? Y/N \n")
+    openWeb = input("Would you like to open this information in a webpage? y/n \n")
 
     if openWeb == "y":
             
@@ -248,7 +248,7 @@ elif varPlayer == "4":
     varNationality4 = varData ['player'][3]['strNationality']
     varDescription4 = varData ['player'][3]['strDescriptionEN']
         
-    openWeb = input("Would you like to open this information in a webpage? Y/N \n")
+    openWeb = input("Would you like to open this information in a webpage? y/n \n")
 
     if openWeb == "y":
             
@@ -281,7 +281,7 @@ elif varPlayer == "5":
     varNationality5 = varData ['player'][4]['strNationality']
     varDescription5 = varData ['player'][4]['strDescriptionEN']
         
-    openWeb = input("Would you like to open this information in a webpage? Y/N \n")
+    openWeb = input("Would you like to open this information in a webpage? y/n \n")
 
     if openWeb == "y":
             
@@ -314,7 +314,7 @@ elif varPlayer == "6":
     varNationality6 = varData ['player'][5]['strNationality']
     varDescription6 = varData ['player'][5]['strDescriptionEN']
         
-    openWeb = input("Would you like to open this information in a webpage? Y/N \n")
+    openWeb = input("Would you like to open this information in a webpage? y/n \n")
 
     if openWeb == "y":
             
@@ -347,7 +347,7 @@ elif varPlayer == "7":
     varNationality7 = varData ['player'][6]['strNationality']
     varDescription7 = varData ['player'][6]['strDescriptionEN']
         
-    openWeb = input("Would you like to open this information in a webpage? Y/N \n")
+    openWeb = input("Would you like to open this information in a webpage? y/n \n")
 
     if openWeb == "y":
             
@@ -380,7 +380,7 @@ elif varPlayer == "8":
     varNationality8 = varData ['player'][7]['strNationality']
     varDescription8 = varData ['player'][7]['strDescriptionEN']
         
-    openWeb = input("Would you like to open this information in a webpage? Y/N \n")
+    openWeb = input("Would you like to open this information in a webpage? y/n \n")
 
     if openWeb == "y":
             
@@ -413,7 +413,7 @@ elif varPlayer == "9":
     varNationality9 = varData ['player'][8]['strNationality']
     varDescription9 = varData ['player'][8]['strDescriptionEN']
         
-    openWeb = input("Would you like to open this information in a webpage? Y/N \n")
+    openWeb = input("Would you like to open this information in a webpage? y/n \n")
 
     if openWeb == "y":
             
@@ -446,7 +446,7 @@ elif varPlayer == "10":
     varNationality10 = varData ['player'][9]['strNationality']
     varDescription10 = varData ['player'][9]['strDescriptionEN']
         
-    openWeb = input("Would you like to open this information in a webpage? Y/N \n")
+    openWeb = input("Would you like to open this information in a webpage? y/n \n")
 
     if openWeb == "y":
             
@@ -479,7 +479,7 @@ if varPlayer == "11":
     varNationality11 = varData ['player'][10]['strNationality']
     varDescription11 = varData ['player'][10]['strDescriptionEN']
         
-    openWeb = input("Would you like to open this information in a webpage? Y/N \n")
+    openWeb = input("Would you like to open this information in a webpage? y/n \n")
 
     if openWeb == "y":
             
@@ -512,7 +512,7 @@ elif varPlayer == "12":
     varNationality12 = varData ['player'][11]['strNationality']
     varDescription12 = varData ['player'][11]['strDescriptionEN']
         
-    openWeb = input("Would you like to open this information in a webpage? Y/N \n")
+    openWeb = input("Would you like to open this information in a webpage? y/n \n")
 
     if openWeb == "y":
             
@@ -545,7 +545,7 @@ elif varPlayer == "13":
     varNationality13 = varData ['player'][12]['strNationality']
     varDescription13 = varData ['player'][12]['strDescriptionEN']
         
-    openWeb = input("Would you like to open this information in a webpage? Y/N \n")
+    openWeb = input("Would you like to open this information in a webpage? y/n \n")
 
     if openWeb == "y":
             
@@ -578,7 +578,7 @@ elif varPlayer == "14":
     varNationality14 = varData ['player'][13]['strNationality']
     varDescription14 = varData ['player'][13]['strDescriptionEN']
         
-    openWeb = input("Would you like to open this information in a webpage? Y/N \n")
+    openWeb = input("Would you like to open this information in a webpage? y/n \n")
 
     if openWeb == "y":
             
@@ -611,7 +611,7 @@ elif varPlayer == "15":
     varNationality15 = varData ['player'][14]['strNationality']
     varDescription15 = varData ['player'][14]['strDescriptionEN']
         
-    openWeb = input("Would you like to open this information in a webpage? Y/N \n")
+    openWeb = input("Would you like to open this information in a webpage? y/n \n")
 
     if openWeb == "y":
             
@@ -644,7 +644,7 @@ elif varPlayer == "16":
     varNationality16 = varData ['player'][15]['strNationality']
     varDescription16 = varData ['player'][15]['strDescriptionEN']
         
-    openWeb = input("Would you like to open this information in a webpage? Y/N \n")
+    openWeb = input("Would you like to open this information in a webpage? y/n \n")
 
     if openWeb == "y":
             
@@ -677,7 +677,7 @@ elif varPlayer == "17":
     varNationality17 = varData ['player'][16]['strNationality']
     varDescription17 = varData ['player'][16]['strDescriptionEN']
         
-    openWeb = input("Would you like to open this information in a webpage? Y/N \n")
+    openWeb = input("Would you like to open this information in a webpage? y/n \n")
 
     if openWeb == "y":
             
@@ -710,7 +710,7 @@ elif varPlayer == "18":
     varNationality18 = varData ['player'][17]['strNationality']
     varDescription18 = varData ['player'][17]['strDescriptionEN']
         
-    openWeb = input("Would you like to open this information in a webpage? Y/N \n")
+    openWeb = input("Would you like to open this information in a webpage? y/n \n")
 
     if openWeb == "y":
             
@@ -743,7 +743,7 @@ elif varPlayer == "19":
     varNationality19 = varData ['player'][18]['strNationality']
     varDescription19 = varData ['player'][18]['strDescriptionEN']
         
-    openWeb = input("Would you like to open this information in a webpage? Y/N \n")
+    openWeb = input("Would you like to open this information in a webpage? y/n \n")
 
     if openWeb == "y":
             
@@ -776,7 +776,7 @@ elif varPlayer == "20":
     varNationality20 = varData ['player'][19]['strNationality']
     varDescription20 = varData ['player'][19]['strDescriptionEN']
         
-    openWeb = input("Would you like to open this information in a webpage? Y/N \n")
+    openWeb = input("Would you like to open this information in a webpage? y/n \n")
 
     if openWeb == "y":
             
@@ -809,7 +809,7 @@ elif varPlayer == "21":
     varNationality21 = varData ['player'][20]['strNationality']
     varDescription21 = varData ['player'][20]['strDescriptionEN']
         
-    openWeb = input("Would you like to open this information in a webpage? Y/N \n")
+    openWeb = input("Would you like to open this information in a webpage? y/n \n")
 
     if openWeb == "y":
             
@@ -842,7 +842,7 @@ elif varPlayer == "22":
     varNationality22 = varData ['player'][21]['strNationality']
     varDescription22 = varData ['player'][21]['strDescriptionEN']
         
-    openWeb = input("Would you like to open this information in a webpage? Y/N \n")
+    openWeb = input("Would you like to open this information in a webpage? y/n \n")
 
     if openWeb == "y":
             
@@ -875,7 +875,7 @@ elif varPlayer == "23":
     varNationality23 = varData ['player'][22]['strNationality']
     varDescription23 = varData ['player'][22]['strDescriptionEN']
         
-    openWeb = input("Would you like to open this information in a webpage? Y/N \n")
+    openWeb = input("Would you like to open this information in a webpage? y/n \n")
 
     if openWeb == "y":
             
@@ -908,7 +908,7 @@ elif varPlayer == "24":
     varNationality24 = varData ['player'][23]['strNationality']
     varDescription24 = varData ['player'][23]['strDescriptionEN']
         
-    openWeb = input("Would you like to open this information in a webpage? Y/N \n")
+    openWeb = input("Would you like to open this information in a webpage? y/n \n")
 
     if openWeb == "y":
             
@@ -941,7 +941,7 @@ elif varPlayer == "25":
     varNationality25 = varData ['player'][24]['strNationality']
     varDescription25 = varData ['player'][24]['strDescriptionEN']
         
-    openWeb = input("Would you like to open this information in a webpage? Y/N \n")
+    openWeb = input("Would you like to open this information in a webpage? y/n \n")
 
     if openWeb == "y":
             
